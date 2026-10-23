@@ -1,0 +1,3050 @@
+{
+  "3400TH": {
+    "@context": "http://environment.data.gov.uk/flood-monitoring/meta/context.jsonld",
+    "meta": {
+      "publisher": "Environment Agency",
+      "licence": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "documentation": "http://environment.data.gov.uk/flood-monitoring/doc/reference",
+      "version": "0.9",
+      "comment": "Status: Beta service",
+      "hasFormat": [
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/3400TH.rdf",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/3400TH.ttl",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/3400TH.html"
+      ]
+    },
+    "items": {
+      "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/3400TH",
+      "RLOIid": "7267",
+      "catchmentName": "Thames from Hurley to Teddington",
+      "dateOpened": "1983-01-01",
+      "eaAreaName": "Thames - West Thames",
+      "eaRegionName": "Thames",
+      "easting": 517700,
+      "label": "Kingston",
+      "lat": 51.415005,
+      "long": -0.308869,
+      "measures": [
+        {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/3400TH-flow--Mean-15_min-m3_s",
+          "label": "THAMES AT STAINES - flow--Mean-15_min-m3_s",
+          "latestReading": "http://environment.data.gov.uk/flood-monitoring/data/readings/3400TH-flow--Mean-15_min-m3_s/2019-06-21T13-00-00Z",
+          "notation": "3400TH-flow--Mean-15_min-m3_s",
+          "parameter": "flow",
+          "parameterName": "Flow",
+          "period": 900,
+          "qualifier": "",
+          "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/3400TH",
+          "stationReference": "3400TH",
+          "type": [
+            "http://environment.data.gov.uk/flood-monitoring/def/core/Flow",
+            "http://environment.data.gov.uk/flood-monitoring/def/core/Measure"
+          ],
+          "unit": "http://qudt.org/1.1/vocab/unit#CubicMeterPerSecond",
+          "unitName": "m3/s",
+          "valueType": "mean"
+        },
+        {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/3400TH-flow--i-15_min-m3_s",
+          "label": "THAMES AT KINGSTON (TEDDINGTON) - flow--i-15_min-m3_s",
+          "latestReading": "http://environment.data.gov.uk/flood-monitoring/data/readings/3400TH-flow--i-15_min-m3_s/2024-08-28T15-30-00Z",
+          "notation": "3400TH-flow--i-15_min-m3_s",
+          "parameter": "flow",
+          "parameterName": "Flow",
+          "period": 900,
+          "qualifier": "",
+          "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/3400TH",
+          "stationReference": "3400TH",
+          "type": [
+            "http://environment.data.gov.uk/flood-monitoring/def/core/Flow",
+            "http://environment.data.gov.uk/flood-monitoring/def/core/Measure"
+          ],
+          "unit": "http://qudt.org/1.1/vocab/unit#CubicMeterPerSecond",
+          "unitName": "m3/s",
+          "valueType": "instantaneous"
+        },
+        {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/3400TH-flow-water-i-15_min-m3_s",
+          "label": "THAMES AT KINGSTON (TEDDINGTON) - flow-water-i-15_min-m3_s",
+          "latestReading": {
+            "@id": "http://environment.data.gov.uk/flood-monitoring/data/readings/3400TH-flow-water-i-15_min-m3_s/2026-10-23T14-15-00Z",
+            "date": "2026-10-23",
+            "dateTime": "2026-10-23T14:15:00Z",
+            "measure": "http://environment.data.gov.uk/flood-monitoring/id/measures/3400TH-flow-water-i-15_min-m3_s",
+            "value": 30.658
+          },
+          "notation": "3400TH-flow-water-i-15_min-m3_s",
+          "parameter": "flow",
+          "parameterName": "Flow",
+          "period": 900,
+          "qualifier": "Water",
+          "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/3400TH",
+          "stationReference": "3400TH",
+          "type": [
+            "http://environment.data.gov.uk/flood-monitoring/def/core/Flow",
+            "http://environment.data.gov.uk/flood-monitoring/def/core/Measure"
+          ],
+          "unit": "http://qudt.org/1.1/vocab/unit#CubicMeterPerSecond",
+          "unitName": "m3/s",
+          "valueType": "instantaneous"
+        },
+        {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/3400TH-level-stage-i-15_min-mAOD",
+          "datumType": "http://environment.data.gov.uk/flood-monitoring/def/core/datumAOD",
+          "label": "THAMES AT KINGSTON (TEDDINGTON) - level-stage-i-15_min-mAOD",
+          "latestReading": "http://environment.data.gov.uk/flood-monitoring/data/readings/3400TH-level-stage-i-15_min-mAOD/2025-12-30T14-15-00Z",
+          "notation": "3400TH-level-stage-i-15_min-mAOD",
+          "parameter": "level",
+          "parameterName": "Water Level",
+          "period": 900,
+          "qualifier": "Stage",
+          "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/3400TH",
+          "stationReference": "3400TH",
+          "type": [
+            "http://environment.data.gov.uk/flood-monitoring/def/core/Measure",
+            "http://environment.data.gov.uk/flood-monitoring/def/core/WaterLevel"
+          ],
+          "unit": "http://qudt.org/1.1/vocab/unit#Meter",
+          "unitName": "mAOD",
+          "valueType": "instantaneous"
+        },
+        {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/3400TH-level-stage-i-15_min-mASD",
+          "datumType": "http://environment.data.gov.uk/flood-monitoring/def/core/datumASD",
+          "label": "THAMES AT KINGSTON (TEDDINGTON) - level-stage-i-15_min-mASD",
+          "latestReading": {
+            "@id": "http://environment.data.gov.uk/flood-monitoring/data/readings/3400TH-level-stage-i-15_min-mASD/2026-10-23T14-15-00Z",
+            "date": "2026-10-23",
+            "dateTime": "2026-10-23T14:15:00Z",
+            "measure": "http://environment.data.gov.uk/flood-monitoring/id/measures/3400TH-level-stage-i-15_min-mASD",
+            "value": 4.577
+          },
+          "notation": "3400TH-level-stage-i-15_min-mASD",
+          "parameter": "level",
+          "parameterName": "Water Level",
+          "period": 900,
+          "qualifier": "Stage",
+          "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/3400TH",
+          "stationReference": "3400TH",
+          "type": [
+            "http://environment.data.gov.uk/flood-monitoring/def/core/Measure",
+            "http://environment.data.gov.uk/flood-monitoring/def/core/WaterLevel"
+          ],
+          "unit": "http://qudt.org/1.1/vocab/unit#Meter",
+          "unitName": "mASD",
+          "valueType": "instantaneous"
+        }
+      ],
+      "northing": 169800,
+      "notation": "3400TH",
+      "riverName": "River Thames",
+      "stageScale": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/3400TH/stageScale",
+        "datum": 0,
+        "highestRecent": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/3400TH/stageScale/highestRecent",
+          "dateTime": "2014-02-02T04:45:00",
+          "value": 5.707
+        },
+        "maxOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/3400TH/stageScale/maxOnRecord",
+          "dateTime": "2000-10-31T17:15:00",
+          "value": 5.707
+        },
+        "minOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/3400TH/stageScale/minOnRecord",
+          "dateTime": "1988-06-22T10:30:00",
+          "value": 0.193
+        },
+        "scaleMax": 6,
+        "typicalRangeHigh": 5.15,
+        "typicalRangeLow": 3.49
+      },
+      "stationReference": "3400TH",
+      "status": "http://environment.data.gov.uk/flood-monitoring/def/core/statusActive",
+      "town": "Kingston Upon Thames",
+      "type": [
+        "http://environment.data.gov.uk/flood-monitoring/def/core/SingleLevel",
+        "http://environment.data.gov.uk/flood-monitoring/def/core/Station"
+      ],
+      "wiskiID": "3400TH"
+    }
+  },
+  "E21563": {
+    "@context": "http://environment.data.gov.uk/flood-monitoring/meta/context.jsonld",
+    "meta": {
+      "publisher": "Environment Agency",
+      "licence": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "documentation": "http://environment.data.gov.uk/flood-monitoring/doc/reference",
+      "version": "0.9",
+      "comment": "Status: Beta service",
+      "hasFormat": [
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/E21563.rdf",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/E21563.ttl",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/E21563.html"
+      ]
+    },
+    "items": {
+      "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/E21563",
+      "RLOIid": "6216",
+      "catchmentName": "Broadland Rivers",
+      "dateOpened": "1982-01-10",
+      "eaAreaName": "Anglian - Essex Norfolk and Suffolk",
+      "eaRegionName": "Anglian",
+      "easting": 635066,
+      "gridReference": "TG 35067 20976",
+      "label": "Barton Broad",
+      "lat": 52.735281,
+      "long": 1.480458,
+      "measures": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/E21563-level-tidal_level-i-15_min-mAOD",
+        "datumType": "http://environment.data.gov.uk/flood-monitoring/def/core/datumAOD",
+        "label": "BARTON BROAD TS - level-tidal_level-i-15_min-mAOD",
+        "latestReading": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/data/readings/E21563-level-tidal_level-i-15_min-mAOD/2026-10-23T14-15-00Z",
+          "date": "2026-10-23",
+          "dateTime": "2026-10-23T14:15:00Z",
+          "measure": "http://environment.data.gov.uk/flood-monitoring/id/measures/E21563-level-tidal_level-i-15_min-mAOD",
+          "value": 0.417
+        },
+        "notation": "E21563-level-tidal_level-i-15_min-mAOD",
+        "parameter": "level",
+        "parameterName": "Water Level",
+        "period": 900,
+        "qualifier": "Tidal Level",
+        "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/E21563",
+        "stationReference": "E21563",
+        "type": [
+          "http://environment.data.gov.uk/flood-monitoring/def/core/Measure",
+          "http://environment.data.gov.uk/flood-monitoring/def/core/WaterLevel"
+        ],
+        "unit": "http://qudt.org/1.1/vocab/unit#Meter",
+        "unitName": "mAOD",
+        "valueType": "instantaneous"
+      },
+      "northing": 320977,
+      "notation": "E21563",
+      "riverName": "River Ant",
+      "stageScale": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/E21563/stageScale",
+        "datum": 0,
+        "highestRecent": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/E21563/stageScale/highestRecent",
+          "dateTime": "2010-03-04T04:00:00",
+          "value": 0.691
+        },
+        "maxOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/E21563/stageScale/maxOnRecord",
+          "dateTime": "2023-11-06T07:15:00",
+          "value": 0.864
+        },
+        "minOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/E21563/stageScale/minOnRecord",
+          "dateTime": "2006-05-09T17:00:00",
+          "value": 0.042
+        },
+        "scaleMax": 1,
+        "typicalRangeHigh": 0.75,
+        "typicalRangeLow": 0.25
+      },
+      "stationReference": "E21563",
+      "status": "http://environment.data.gov.uk/flood-monitoring/def/core/statusActive",
+      "statusDate": "2018-10-05T07:36:00",
+      "town": "Neatishead",
+      "type": [
+        "http://environment.data.gov.uk/flood-monitoring/def/core/SingleLevel",
+        "http://environment.data.gov.uk/flood-monitoring/def/core/Station"
+      ],
+      "wiskiID": "T340903"
+    }
+  },
+  "E2900-southern": {
+    "@context": "http://environment.data.gov.uk/flood-monitoring/meta/context.jsonld",
+    "meta": {
+      "publisher": "Environment Agency",
+      "licence": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "documentation": "http://environment.data.gov.uk/flood-monitoring/doc/reference",
+      "version": "0.9",
+      "comment": "Status: Beta service",
+      "hasFormat": [
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/E2900-southern.rdf",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/E2900-southern.ttl",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/E2900-southern.html"
+      ]
+    },
+    "items": {
+      "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/E2900-southern",
+      "RLOIid": "1029",
+      "catchmentName": "Swale",
+      "dateOpened": "1992-03-10",
+      "eaAreaName": "Southern - Kent and South London",
+      "eaRegionName": "Southern",
+      "easting": 590800,
+      "label": "Queenborough",
+      "lat": 51.415798,
+      "long": 0.742491,
+      "measures": [
+        {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/E2900-southern-level-tidal_level-i-15_min----",
+          "label": "QUEENBOROUGH GATE TL - level-tidal_level-i-15_min----",
+          "latestReading": "http://environment.data.gov.uk/flood-monitoring/data/readings/E2900-southern-level-tidal_level-i-15_min----/2018-08-30T13-00-00Z",
+          "notation": "E2900-southern-level-tidal_level-i-15_min----",
+          "parameter": "level",
+          "parameterName": "Water Level",
+          "period": 900,
+          "qualifier": "Tidal Level",
+          "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/E2900-southern",
+          "stationReference": "E2900",
+          "type": [
+            "http://environment.data.gov.uk/flood-monitoring/def/core/Measure",
+            "http://environment.data.gov.uk/flood-monitoring/def/core/WaterLevel"
+          ],
+          "unitName": "---",
+          "valueType": "instantaneous"
+        },
+        {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/E2900-southern-level-tidal_level-i-15_min-mAOD",
+          "datumType": "http://environment.data.gov.uk/flood-monitoring/def/core/datumAOD",
+          "label": "QUEENBOROUGH GATE TL - level-tidal_level-i-15_min-mAOD",
+          "latestReading": {
+            "@id": "http://environment.data.gov.uk/flood-monitoring/data/readings/E2900-southern-level-tidal_level-i-15_min-mAOD/2026-10-23T14-15-00Z",
+            "date": "2026-10-23",
+            "dateTime": "2026-10-23T14:15:00Z",
+            "measure": "http://environment.data.gov.uk/flood-monitoring/id/measures/E2900-southern-level-tidal_level-i-15_min-mAOD",
+            "value": 0.428
+          },
+          "notation": "E2900-southern-level-tidal_level-i-15_min-mAOD",
+          "parameter": "level",
+          "parameterName": "Water Level",
+          "period": 900,
+          "qualifier": "Tidal Level",
+          "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/E2900-southern",
+          "stationReference": "E2900",
+          "type": [
+            "http://environment.data.gov.uk/flood-monitoring/def/core/Measure",
+            "http://environment.data.gov.uk/flood-monitoring/def/core/WaterLevel"
+          ],
+          "unit": "http://qudt.org/1.1/vocab/unit#Meter",
+          "unitName": "mAOD",
+          "valueType": "instantaneous"
+        }
+      ],
+      "northing": 172100,
+      "notation": "E2900-southern",
+      "riverName": "River Medway",
+      "stageScale": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/E2900-southern/stageScale",
+        "datum": 0,
+        "maxOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/E2900-southern/stageScale/maxOnRecord",
+          "dateTime": "1993-11-15T00:30:00",
+          "value": 4.063
+        },
+        "scaleMax": 10
+      },
+      "stationReference": "E2900",
+      "status": "http://environment.data.gov.uk/flood-monitoring/def/core/statusActive",
+      "town": "Queenborough",
+      "type": [
+        "http://environment.data.gov.uk/flood-monitoring/def/core/Coastal",
+        "http://environment.data.gov.uk/flood-monitoring/def/core/Station"
+      ],
+      "wiskiID": "452318003"
+    }
+  },
+  "4143": {
+    "@context": "http://environment.data.gov.uk/flood-monitoring/meta/context.jsonld",
+    "meta": {
+      "publisher": "Environment Agency",
+      "licence": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "documentation": "http://environment.data.gov.uk/flood-monitoring/doc/reference",
+      "version": "0.9",
+      "comment": "Status: Beta service",
+      "hasFormat": [
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4143.rdf",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4143.ttl",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4143.html"
+      ]
+    },
+    "items": {
+      "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4143",
+      "RLOIid": "2154",
+      "catchmentName": "Dove",
+      "dateOpened": "1999-05-05",
+      "eaAreaName": "Midlands - Staffordshire Warwickshire and West Midlands",
+      "eaRegionName": "Midlands",
+      "easting": 399240,
+      "label": "Leek",
+      "lat": 53.1201,
+      "long": -2.012802,
+      "measures": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/4143-level-stage-i-15_min-mASD",
+        "datumType": "http://environment.data.gov.uk/flood-monitoring/def/core/datumASD",
+        "label": "Leek LVL - level-stage-i-15_min-mASD",
+        "latestReading": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/data/readings/4143-level-stage-i-15_min-mASD/2026-10-23T14-15-00Z",
+          "date": "2026-10-23",
+          "dateTime": "2026-10-23T14:15:00Z",
+          "measure": "http://environment.data.gov.uk/flood-monitoring/id/measures/4143-level-stage-i-15_min-mASD",
+          "value": 0.47
+        },
+        "notation": "4143-level-stage-i-15_min-mASD",
+        "parameter": "level",
+        "parameterName": "Water Level",
+        "period": 900,
+        "qualifier": "Stage",
+        "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/4143",
+        "stationReference": "4143",
+        "type": [
+          "http://environment.data.gov.uk/flood-monitoring/def/core/Measure",
+          "http://environment.data.gov.uk/flood-monitoring/def/core/WaterLevel"
+        ],
+        "unit": "http://qudt.org/1.1/vocab/unit#Meter",
+        "unitName": "mASD",
+        "valueType": "instantaneous"
+      },
+      "northing": 358104,
+      "notation": "4143",
+      "riverName": "River Churnet",
+      "stageScale": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4143/stageScale",
+        "datum": 165.504,
+        "highestRecent": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4143/stageScale/highestRecent",
+          "dateTime": "2012-06-08T14:00:00",
+          "value": 1.481
+        },
+        "maxOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4143/stageScale/maxOnRecord",
+          "dateTime": "2000-11-06T07:15:00",
+          "value": 1.67
+        },
+        "minOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4143/stageScale/minOnRecord",
+          "dateTime": "2000-01-20T12:00:00",
+          "value": 0.055
+        },
+        "scaleMax": 2,
+        "typicalRangeHigh": 0.505,
+        "typicalRangeLow": 0.183
+      },
+      "stationReference": "4143",
+      "status": "http://environment.data.gov.uk/flood-monitoring/def/core/statusActive",
+      "statusDate": "2023-11-06T12:22:00",
+      "town": "Leek",
+      "type": [
+        "http://environment.data.gov.uk/flood-monitoring/def/core/SingleLevel",
+        "http://environment.data.gov.uk/flood-monitoring/def/core/Station"
+      ],
+      "wiskiID": "4143"
+    }
+  },
+  "E71539": {
+    "@context": "http://environment.data.gov.uk/flood-monitoring/meta/context.jsonld",
+    "meta": {
+      "publisher": "Environment Agency",
+      "licence": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "documentation": "http://environment.data.gov.uk/flood-monitoring/doc/reference",
+      "version": "0.9",
+      "comment": "Status: Beta service",
+      "hasFormat": [
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/E71539.rdf",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/E71539.ttl",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/E71539.html"
+      ]
+    },
+    "items": {
+      "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/E71539",
+      "RLOIid": "1157",
+      "catchmentName": "England - East Coast",
+      "dateOpened": "2012-01-31",
+      "eaAreaName": "Anglian - Kent and South London",
+      "eaRegionName": "Anglian",
+      "easting": 590740,
+      "gridReference": "TQ 9074 7542",
+      "label": "Sheerness",
+      "lat": 51.445627,
+      "long": 0.743415,
+      "measures": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/E71539-level-tidal_level-Mean-15_min-mAOD",
+        "datumType": "http://environment.data.gov.uk/flood-monitoring/def/core/datumAOD",
+        "label": "Sheerness - level-tidal_level-Mean-15_min-mAOD",
+        "latestReading": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/data/readings/E71539-level-tidal_level-Mean-15_min-mAOD/2026-10-23T14-00-00Z",
+          "date": "2026-10-23",
+          "dateTime": "2026-10-23T14:00:00Z",
+          "measure": "http://environment.data.gov.uk/flood-monitoring/id/measures/E71539-level-tidal_level-Mean-15_min-mAOD",
+          "value": -0.782
+        },
+        "localDatumMeasure": "http://environment.data.gov.uk/flood-monitoring/id/measures/E71524-level-tidal_level-Mean-15_min-m",
+        "notation": "E71539-level-tidal_level-Mean-15_min-mAOD",
+        "parameter": "level",
+        "parameterName": "Water Level",
+        "period": 900,
+        "qualifier": "Tidal Level",
+        "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/E71539",
+        "stationReference": "E71539",
+        "type": [
+          "http://environment.data.gov.uk/flood-monitoring/def/core/Measure",
+          "http://environment.data.gov.uk/flood-monitoring/def/core/WaterLevel"
+        ],
+        "unit": "http://qudt.org/1.1/vocab/unit#Meter",
+        "unitName": "mAOD",
+        "valueType": "mean"
+      },
+      "northing": 175419,
+      "notation": "E71539",
+      "riverName": "Tide",
+      "stageScale": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/E71539/stageScale",
+        "datum": 0,
+        "maxOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/E71539/stageScale/maxOnRecord",
+          "dateTime": "2016-11-21T04:15:00",
+          "value": 4.1
+        },
+        "scaleMax": 5
+      },
+      "stationReference": "E71539",
+      "status": "http://environment.data.gov.uk/flood-monitoring/def/core/statusActive",
+      "statusDate": "2017-10-25T07:00:00",
+      "town": "Sheerness",
+      "type": [
+        "http://environment.data.gov.uk/flood-monitoring/def/core/Coastal",
+        "http://environment.data.gov.uk/flood-monitoring/def/core/Station",
+        "http://environment.data.gov.uk/flood-monitoring/def/core/TideGauge"
+      ]
+    }
+  },
+  "2077": {
+    "@context": "http://environment.data.gov.uk/flood-monitoring/meta/context.jsonld",
+    "meta": {
+      "publisher": "Environment Agency",
+      "licence": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "documentation": "http://environment.data.gov.uk/flood-monitoring/doc/reference",
+      "version": "0.9",
+      "comment": "Status: Beta service",
+      "hasFormat": [
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/2077.rdf",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/2077.ttl",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/2077.html"
+      ]
+    },
+    "items": {
+      "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/2077",
+      "RLOIid": "2036",
+      "catchmentName": "Severn Uplands",
+      "dateOpened": "1985-12-27",
+      "eaAreaName": "Midlands - Shropshire Herefordshire Worcestershire and Gloucestershire",
+      "eaRegionName": "Midlands",
+      "easting": 348880,
+      "label": "Welsh Bridge",
+      "lat": 52.709797,
+      "long": -2.75808,
+      "measures": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/2077-level-stage-i-15_min-mASD",
+        "datumType": "http://environment.data.gov.uk/flood-monitoring/def/core/datumASD",
+        "label": "Welshbridge LVL - level-stage-i-15_min-mASD",
+        "latestReading": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/data/readings/2077-level-stage-i-15_min-mASD/2026-10-23T14-00-00Z",
+          "date": "2026-10-23",
+          "dateTime": "2026-10-23T14:00:00Z",
+          "measure": "http://environment.data.gov.uk/flood-monitoring/id/measures/2077-level-stage-i-15_min-mASD",
+          "value": 0.82
+        },
+        "notation": "2077-level-stage-i-15_min-mASD",
+        "parameter": "level",
+        "parameterName": "Water Level",
+        "period": 900,
+        "qualifier": "Stage",
+        "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/2077",
+        "stationReference": "2077",
+        "type": [
+          "http://environment.data.gov.uk/flood-monitoring/def/core/Measure",
+          "http://environment.data.gov.uk/flood-monitoring/def/core/WaterLevel"
+        ],
+        "unit": "http://qudt.org/1.1/vocab/unit#Meter",
+        "unitName": "mASD",
+        "valueType": "instantaneous"
+      },
+      "northing": 312730,
+      "notation": "2077",
+      "riverName": "River Severn",
+      "stageScale": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/2077/stageScale",
+        "datum": 46.972,
+        "highestRecent": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/2077/stageScale/highestRecent",
+          "dateTime": "2014-02-10T18:30:00",
+          "value": 4.443
+        },
+        "maxOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/2077/stageScale/maxOnRecord",
+          "dateTime": "2000-11-01T10:15:00",
+          "value": 5.252
+        },
+        "minOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/2077/stageScale/minOnRecord",
+          "dateTime": "1992-08-08T08:00:00",
+          "value": 0.107
+        },
+        "scaleMax": 6,
+        "typicalRangeHigh": 2.7,
+        "typicalRangeLow": 0.422
+      },
+      "stationReference": "2077",
+      "status": "http://environment.data.gov.uk/flood-monitoring/def/core/statusActive",
+      "town": "Shrewsbury",
+      "type": [
+        "http://environment.data.gov.uk/flood-monitoring/def/core/SingleLevel",
+        "http://environment.data.gov.uk/flood-monitoring/def/core/Station"
+      ],
+      "wiskiID": "2077"
+    }
+  },
+  "4083": {
+    "@context": "http://environment.data.gov.uk/flood-monitoring/meta/context.jsonld",
+    "meta": {
+      "publisher": "Environment Agency",
+      "licence": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "documentation": "http://environment.data.gov.uk/flood-monitoring/doc/reference",
+      "version": "0.9",
+      "comment": "Status: Beta service",
+      "hasFormat": [
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4083.rdf",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4083.ttl",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4083.html"
+      ]
+    },
+    "items": {
+      "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4083",
+      "RLOIid": "2137",
+      "catchmentName": "Staffordshire Trent Valley",
+      "dateOpened": "1982-04-05",
+      "eaAreaName": "Midlands - Staffordshire Warwickshire and West Midlands",
+      "eaRegionName": "Midlands",
+      "easting": 388540,
+      "label": "Darlaston",
+      "lat": 52.916247,
+      "long": -2.171867,
+      "measures": [
+        {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/4083-flow--i-15_min-m3_s",
+          "label": "Darlaston FLOW - flow--i-15_min-m3_s",
+          "latestReading": {
+            "@id": "http://environment.data.gov.uk/flood-monitoring/data/readings/4083-flow--i-15_min-m3_s/2026-10-23T14-15-00Z",
+            "date": "2026-10-23",
+            "dateTime": "2026-10-23T14:15:00Z",
+            "measure": "http://environment.data.gov.uk/flood-monitoring/id/measures/4083-flow--i-15_min-m3_s",
+            "value": 9.073
+          },
+          "notation": "4083-flow--i-15_min-m3_s",
+          "parameter": "flow",
+          "parameterName": "Flow",
+          "period": 900,
+          "qualifier": "",
+          "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/4083",
+          "stationReference": "4083",
+          "type": [
+            "http://environment.data.gov.uk/flood-monitoring/def/core/Flow",
+            "http://environment.data.gov.uk/flood-monitoring/def/core/Measure"
+          ],
+          "unit": "http://qudt.org/1.1/vocab/unit#CubicMeterPerSecond",
+          "unitName": "m3/s",
+          "valueType": "instantaneous"
+        },
+        {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/4083-level-stage-i-15_min-mASD",
+          "datumType": "http://environment.data.gov.uk/flood-monitoring/def/core/datumASD",
+          "label": "Darlaston FLOW - level-stage-i-15_min-mASD",
+          "latestReading": {
+            "@id": "http://environment.data.gov.uk/flood-monitoring/data/readings/4083-level-stage-i-15_min-mASD/2026-10-23T14-15-00Z",
+            "date": "2026-10-23",
+            "dateTime": "2026-10-23T14:15:00Z",
+            "measure": "http://environment.data.gov.uk/flood-monitoring/id/measures/4083-level-stage-i-15_min-mASD",
+            "value": 1.549
+          },
+          "notation": "4083-level-stage-i-15_min-mASD",
+          "parameter": "level",
+          "parameterName": "Water Level",
+          "period": 900,
+          "qualifier": "Stage",
+          "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/4083",
+          "stationReference": "4083",
+          "type": [
+            "http://environment.data.gov.uk/flood-monitoring/def/core/Measure",
+            "http://environment.data.gov.uk/flood-monitoring/def/core/WaterLevel"
+          ],
+          "unit": "http://qudt.org/1.1/vocab/unit#Meter",
+          "unitName": "mASD",
+          "valueType": "instantaneous"
+        }
+      ],
+      "northing": 335440,
+      "notation": "4083",
+      "riverName": "River Trent",
+      "stageScale": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4083/stageScale",
+        "datum": 85.48,
+        "highestRecent": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4083/stageScale/highestRecent",
+          "dateTime": "2012-07-06T17:00:00",
+          "value": 2.651
+        },
+        "maxOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4083/stageScale/maxOnRecord",
+          "dateTime": "2004-08-10T16:00:00",
+          "value": 2.94
+        },
+        "minOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4083/stageScale/minOnRecord",
+          "dateTime": "1988-06-14T08:30:00",
+          "value": 0.594
+        },
+        "scaleMax": 4,
+        "typicalRangeHigh": 1.486,
+        "typicalRangeLow": 0.471
+      },
+      "stationReference": "4083",
+      "status": "http://environment.data.gov.uk/flood-monitoring/def/core/statusActive",
+      "statusDate": "2022-02-09T10:17:00",
+      "town": "Meaford",
+      "type": [
+        "http://environment.data.gov.uk/flood-monitoring/def/core/SingleLevel",
+        "http://environment.data.gov.uk/flood-monitoring/def/core/Station"
+      ],
+      "wiskiID": "4083"
+    }
+  },
+  "0006": {
+    "@context": "http://environment.data.gov.uk/flood-monitoring/meta/context.jsonld",
+    "meta": {
+      "publisher": "Environment Agency",
+      "licence": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "documentation": "http://environment.data.gov.uk/flood-monitoring/doc/reference",
+      "version": "0.9",
+      "comment": "Status: Beta service",
+      "hasFormat": [
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/0006.rdf",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/0006.ttl",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/0006.html"
+      ]
+    },
+    "items": {
+      "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/0006",
+      "RLOIid": "7389",
+      "catchmentName": "London",
+      "dateOpened": "1989-01-03",
+      "eaAreaName": "Thames - Kent and South London",
+      "eaRegionName": "Thames",
+      "easting": 530320,
+      "label": "Westminster",
+      "lat": 51.501216,
+      "long": -0.12385,
+      "measures": [
+        {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/0006-level-tidal_level-i-15_min-mAOD",
+          "datumType": "http://environment.data.gov.uk/flood-monitoring/def/core/datumAOD",
+          "label": "Westminster - level-tidal_level-i-15_min-mAOD",
+          "latestReading": {
+            "@id": "http://environment.data.gov.uk/flood-monitoring/data/readings/0006-level-tidal_level-i-15_min-mAOD/2026-10-23T14-15-00Z",
+            "date": "2026-10-23",
+            "dateTime": "2026-10-23T14:15:00Z",
+            "measure": "http://environment.data.gov.uk/flood-monitoring/id/measures/0006-level-tidal_level-i-15_min-mAOD",
+            "value": 0.667
+          },
+          "notation": "0006-level-tidal_level-i-15_min-mAOD",
+          "parameter": "level",
+          "parameterName": "Water Level",
+          "period": 900,
+          "qualifier": "Tidal Level",
+          "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/0006",
+          "stationReference": "0006",
+          "type": [
+            "http://environment.data.gov.uk/flood-monitoring/def/core/Measure",
+            "http://environment.data.gov.uk/flood-monitoring/def/core/WaterLevel"
+          ],
+          "unit": "http://qudt.org/1.1/vocab/unit#Meter",
+          "unitName": "mAOD",
+          "valueType": "instantaneous"
+        },
+        {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/0006-level-tidal_level-i-1_min-mAOD",
+          "datumType": "http://environment.data.gov.uk/flood-monitoring/def/core/datumAOD",
+          "label": "Westminster - level-tidal_level-i-1_min-mAOD",
+          "latestReading": "http://environment.data.gov.uk/flood-monitoring/data/readings/0006-level-tidal_level-i-1_min-mAOD/2023-03-16T13-16-00Z",
+          "notation": "0006-level-tidal_level-i-1_min-mAOD",
+          "parameter": "level",
+          "parameterName": "Water Level",
+          "period": 60,
+          "qualifier": "Tidal Level",
+          "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/0006",
+          "stationReference": "0006",
+          "type": [
+            "http://environment.data.gov.uk/flood-monitoring/def/core/Measure",
+            "http://environment.data.gov.uk/flood-monitoring/def/core/WaterLevel"
+          ],
+          "unit": "http://qudt.org/1.1/vocab/unit#Meter",
+          "unitName": "mAOD",
+          "valueType": "instantaneous"
+        }
+      ],
+      "northing": 179700,
+      "notation": "0006",
+      "riverName": "Thames Tideway",
+      "stageScale": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/0006/stageScale",
+        "datum": 0,
+        "maxOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/0006/stageScale/maxOnRecord",
+          "dateTime": "1999-02-18T15:30:00",
+          "value": 4.81
+        },
+        "scaleMax": 5
+      },
+      "stationReference": "0006",
+      "status": "http://environment.data.gov.uk/flood-monitoring/def/core/statusActive",
+      "statusDate": "2017-08-14T09:00:00",
+      "town": "Westminster",
+      "type": [
+        "http://environment.data.gov.uk/flood-monitoring/def/core/Coastal",
+        "http://environment.data.gov.uk/flood-monitoring/def/core/Station"
+      ],
+      "wiskiID": "4250TH"
+    }
+  },
+  "44239": {
+    "@context": "http://environment.data.gov.uk/flood-monitoring/meta/context.jsonld",
+    "meta": {
+      "publisher": "Environment Agency",
+      "licence": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "documentation": "http://environment.data.gov.uk/flood-monitoring/doc/reference",
+      "version": "0.9",
+      "comment": "Status: Beta service",
+      "hasFormat": [
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/44239.rdf",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/44239.ttl",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/44239.html"
+      ]
+    },
+    "items": {
+      "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/44239",
+      "RLOIid": "3365",
+      "catchmentName": "Frome, Piddle, Poole Harbour and Purbeck",
+      "dateOpened": "2006-07-24",
+      "eaAreaName": "South West - Wessex",
+      "eaRegionName": "South West",
+      "easting": 358760,
+      "gridReference": "SY 5876090850",
+      "label": "Kingston Russell",
+      "lat": 50.715805,
+      "long": -2.5855,
+      "measures": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/44239-level-groundwater-i-15_min-mAOD",
+        "datumType": "http://environment.data.gov.uk/flood-monitoring/def/core/datumAOD",
+        "label": "KINGSTON RUSSELL DNP3 - level-groundwater-i-15_min-mAOD",
+        "latestReading": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/data/readings/44239-level-groundwater-i-15_min-mAOD/2026-10-23T09-00-00Z",
+          "date": "2026-10-23",
+          "dateTime": "2026-10-23T09:00:00Z",
+          "measure": "http://environment.data.gov.uk/flood-monitoring/id/measures/44239-level-groundwater-i-15_min-mAOD",
+          "value": 103.98
+        },
+        "notation": "44239-level-groundwater-i-15_min-mAOD",
+        "parameter": "level",
+        "parameterName": "Water Level",
+        "period": 900,
+        "qualifier": "Groundwater",
+        "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/44239",
+        "stationReference": "44239",
+        "type": [
+          "http://environment.data.gov.uk/flood-monitoring/def/core/Measure",
+          "http://environment.data.gov.uk/flood-monitoring/def/core/WaterLevel"
+        ],
+        "unit": "http://qudt.org/1.1/vocab/unit#Meter",
+        "unitName": "mAOD",
+        "valueType": "instantaneous"
+      },
+      "northing": 90850,
+      "notation": "44239",
+      "riverName": "Groundwater Level",
+      "stageScale": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/44239/stageScale",
+        "datum": 125.69,
+        "maxOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/44239/stageScale/maxOnRecord",
+          "dateTime": "2026-02-11T18:45:00",
+          "value": 121.733
+        },
+        "minOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/44239/stageScale/minOnRecord",
+          "dateTime": "2011-10-07T07:30:00",
+          "value": 101.873
+        },
+        "scaleMax": 125,
+        "typicalRangeHigh": 113,
+        "typicalRangeLow": 103.665
+      },
+      "stationReference": "44239",
+      "status": "http://environment.data.gov.uk/flood-monitoring/def/core/statusActive",
+      "statusDate": "2024-02-23T11:34:00",
+      "town": "Kingston Russell",
+      "type": [
+        "http://environment.data.gov.uk/flood-monitoring/def/core/Groundwater",
+        "http://environment.data.gov.uk/flood-monitoring/def/core/Station"
+      ],
+      "wiskiID": "90159401"
+    }
+  },
+  "680301": {
+    "@context": "http://environment.data.gov.uk/flood-monitoring/meta/context.jsonld",
+    "meta": {
+      "publisher": "Environment Agency",
+      "licence": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "documentation": "http://environment.data.gov.uk/flood-monitoring/doc/reference",
+      "version": "0.9",
+      "comment": "Status: Beta service",
+      "hasFormat": [
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/680301.rdf",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/680301.ttl",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/680301.html"
+      ]
+    },
+    "items": {
+      "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/680301",
+      "RLOIid": "5009",
+      "catchmentName": "Weaver and Dane",
+      "dateOpened": "1973-04-01",
+      "eaAreaName": "North West - Greater Manchester Merseyside and Cheshire",
+      "eaRegionName": "North West",
+      "easting": 365260,
+      "label": "Audlem",
+      "lat": 52.983736,
+      "long": -2.518888,
+      "measures": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/680301-level-stage-i-15_min-m",
+        "label": "Audlem - level-stage-i-15_min-m",
+        "latestReading": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/data/readings/680301-level-stage-i-15_min-m/2026-10-23T14-15-00Z",
+          "date": "2026-10-23",
+          "dateTime": "2026-10-23T14:15:00Z",
+          "measure": "http://environment.data.gov.uk/flood-monitoring/id/measures/680301-level-stage-i-15_min-m",
+          "value": 0.26
+        },
+        "notation": "680301-level-stage-i-15_min-m",
+        "parameter": "level",
+        "parameterName": "Water Level",
+        "period": 900,
+        "qualifier": "Stage",
+        "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/680301",
+        "stationReference": "680301",
+        "type": [
+          "http://environment.data.gov.uk/flood-monitoring/def/core/Measure",
+          "http://environment.data.gov.uk/flood-monitoring/def/core/WaterLevel"
+        ],
+        "unit": "http://qudt.org/1.1/vocab/unit#Meter",
+        "unitName": "m",
+        "valueType": "instantaneous"
+      },
+      "northing": 343060,
+      "notation": "680301",
+      "riverName": "River Weaver",
+      "stageScale": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/680301/stageScale",
+        "datum": 44.684,
+        "highestRecent": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/680301/stageScale/highestRecent",
+          "dateTime": "2013-01-27T08:00:00",
+          "value": 2.558
+        },
+        "maxOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/680301/stageScale/maxOnRecord",
+          "dateTime": "2023-10-20T20:15:00",
+          "value": 2.872
+        },
+        "minOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/680301/stageScale/minOnRecord",
+          "dateTime": "1976-08-23T17:00:00",
+          "value": 0.039
+        },
+        "scaleMax": 3,
+        "typicalRangeHigh": 2,
+        "typicalRangeLow": 0.107
+      },
+      "stationReference": "680301",
+      "status": "http://environment.data.gov.uk/flood-monitoring/def/core/statusActive",
+      "town": "Coxbank",
+      "type": [
+        "http://environment.data.gov.uk/flood-monitoring/def/core/SingleLevel",
+        "http://environment.data.gov.uk/flood-monitoring/def/core/Station"
+      ],
+      "wiskiID": "680301"
+    }
+  },
+  "4040": {
+    "@context": "http://environment.data.gov.uk/flood-monitoring/meta/context.jsonld",
+    "meta": {
+      "publisher": "Environment Agency",
+      "licence": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "documentation": "http://environment.data.gov.uk/flood-monitoring/doc/reference",
+      "version": "0.9",
+      "comment": "Status: Beta service",
+      "hasFormat": [
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4040.rdf",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4040.ttl",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4040.html"
+      ]
+    },
+    "items": {
+      "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4040",
+      "RLOIid": "2116",
+      "catchmentName": "Staffordshire Trent Valley",
+      "dateOpened": "1972-09-29",
+      "downstageScale": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4040/downstageScale",
+        "datum": 113.165,
+        "highestRecent": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4040/downstageScale/highestRecent",
+          "dateTime": "2014-11-21T23:30:00",
+          "value": 0.203
+        },
+        "maxOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4040/downstageScale/maxOnRecord",
+          "dateTime": "2020-02-16T02:30:00",
+          "value": 1.009
+        },
+        "minOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4040/downstageScale/minOnRecord",
+          "dateTime": "2014-10-31T16:30:00",
+          "value": -0.642
+        },
+        "scaleMax": 3,
+        "typicalRangeHigh": -0.214,
+        "typicalRangeLow": -0.538
+      },
+      "eaAreaName": "Midlands - Staffordshire Warwickshire and West Midlands",
+      "eaRegionName": "Midlands",
+      "easting": 389220,
+      "label": "Bucknall",
+      "lat": 53.017569,
+      "long": -2.162134,
+      "measures": [
+        {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/4040-level-downstage-i-15_min-mASD",
+          "datumType": "http://environment.data.gov.uk/flood-monitoring/def/core/datumASD",
+          "label": "Stoke LVL - level-downstage-i-15_min-mASD",
+          "latestReading": {
+            "@id": "http://environment.data.gov.uk/flood-monitoring/data/readings/4040-level-downstage-i-15_min-mASD/2026-10-23T14-00-00Z",
+            "date": "2026-10-23",
+            "dateTime": "2026-10-23T14:00:00Z",
+            "measure": "http://environment.data.gov.uk/flood-monitoring/id/measures/4040-level-downstage-i-15_min-mASD",
+            "value": 0.277
+          },
+          "notation": "4040-level-downstage-i-15_min-mASD",
+          "parameter": "level",
+          "parameterName": "Water Level",
+          "period": 900,
+          "qualifier": "Downstream Stage",
+          "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/4040",
+          "stationReference": "4040",
+          "type": [
+            "http://environment.data.gov.uk/flood-monitoring/def/core/Measure",
+            "http://environment.data.gov.uk/flood-monitoring/def/core/WaterLevel"
+          ],
+          "unit": "http://qudt.org/1.1/vocab/unit#Meter",
+          "unitName": "mASD",
+          "valueType": "instantaneous"
+        },
+        {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/4040-level-stage-i-15_min-mASD",
+          "datumType": "http://environment.data.gov.uk/flood-monitoring/def/core/datumASD",
+          "label": "Stoke LVL - level-stage-i-15_min-mASD",
+          "latestReading": {
+            "@id": "http://environment.data.gov.uk/flood-monitoring/data/readings/4040-level-stage-i-15_min-mASD/2026-10-23T14-00-00Z",
+            "date": "2026-10-23",
+            "dateTime": "2026-10-23T14:00:00Z",
+            "measure": "http://environment.data.gov.uk/flood-monitoring/id/measures/4040-level-stage-i-15_min-mASD",
+            "value": 0.619
+          },
+          "notation": "4040-level-stage-i-15_min-mASD",
+          "parameter": "level",
+          "parameterName": "Water Level",
+          "period": 900,
+          "qualifier": "Stage",
+          "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/4040",
+          "stationReference": "4040",
+          "type": [
+            "http://environment.data.gov.uk/flood-monitoring/def/core/Measure",
+            "http://environment.data.gov.uk/flood-monitoring/def/core/WaterLevel"
+          ],
+          "unit": "http://qudt.org/1.1/vocab/unit#Meter",
+          "unitName": "mASD",
+          "valueType": "instantaneous"
+        }
+      ],
+      "northing": 346710,
+      "notation": "4040",
+      "riverName": "River Trent",
+      "stageScale": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4040/stageScale",
+        "datum": 113.165,
+        "highestRecent": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4040/stageScale/highestRecent",
+          "dateTime": "2013-01-27T06:45:00",
+          "value": 1.251
+        },
+        "maxOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4040/stageScale/maxOnRecord",
+          "dateTime": "1987-08-23T17:30:00",
+          "value": 2.511
+        },
+        "minOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4040/stageScale/minOnRecord",
+          "dateTime": "1986-02-27T01:00:00",
+          "value": 0.03
+        },
+        "scaleMax": 3,
+        "typicalRangeHigh": 0.388,
+        "typicalRangeLow": 0.067
+      },
+      "stationReference": "4040",
+      "status": "http://environment.data.gov.uk/flood-monitoring/def/core/statusActive",
+      "town": "Bucknall",
+      "type": [
+        "http://environment.data.gov.uk/flood-monitoring/def/core/MultiTraceLevel",
+        "http://environment.data.gov.uk/flood-monitoring/def/core/Station"
+      ],
+      "wiskiID": "4040"
+    }
+  },
+  "681003": {
+    "@context": "http://environment.data.gov.uk/flood-monitoring/meta/context.jsonld",
+    "meta": {
+      "publisher": "Environment Agency",
+      "licence": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "documentation": "http://environment.data.gov.uk/flood-monitoring/doc/reference",
+      "version": "0.9",
+      "comment": "Status: Beta service",
+      "hasFormat": [
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/681003.rdf",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/681003.ttl",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/681003.html"
+      ]
+    },
+    "items": {
+      "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/681003",
+      "RLOIid": "5073",
+      "catchmentName": "Weaver and Dane",
+      "dateOpened": "1992-08-01",
+      "eaAreaName": "North West - Greater Manchester Merseyside and Cheshire",
+      "eaRegionName": "North West",
+      "easting": 393100,
+      "label": "Hug Bridge",
+      "lat": 53.169457,
+      "long": -2.104665,
+      "measures": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/681003-level-stage-i-15_min-m",
+        "label": "Hug Bridge - level-stage-i-15_min-m",
+        "latestReading": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/data/readings/681003-level-stage-i-15_min-m/2026-10-23T14-15-00Z",
+          "date": "2026-10-23",
+          "dateTime": "2026-10-23T14:15:00Z",
+          "measure": "http://environment.data.gov.uk/flood-monitoring/id/measures/681003-level-stage-i-15_min-m",
+          "value": 0.454
+        },
+        "notation": "681003-level-stage-i-15_min-m",
+        "parameter": "level",
+        "parameterName": "Water Level",
+        "period": 900,
+        "qualifier": "Stage",
+        "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/681003",
+        "stationReference": "681003",
+        "type": [
+          "http://environment.data.gov.uk/flood-monitoring/def/core/Measure",
+          "http://environment.data.gov.uk/flood-monitoring/def/core/WaterLevel"
+        ],
+        "unit": "http://qudt.org/1.1/vocab/unit#Meter",
+        "unitName": "m",
+        "valueType": "instantaneous"
+      },
+      "northing": 363600,
+      "notation": "681003",
+      "riverName": "River Dane",
+      "stageScale": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/681003/stageScale",
+        "datum": 138.34,
+        "highestRecent": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/681003/stageScale/highestRecent",
+          "dateTime": "2012-07-10T06:30:00",
+          "value": 1.414
+        },
+        "maxOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/681003/stageScale/maxOnRecord",
+          "dateTime": "1998-10-24T07:59:00",
+          "value": 2.558
+        },
+        "minOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/681003/stageScale/minOnRecord",
+          "dateTime": "2000-08-23T15:00:00",
+          "value": 0.12
+        },
+        "scaleMax": 3,
+        "typicalRangeHigh": 0.476,
+        "typicalRangeLow": 0.172
+      },
+      "stationReference": "681003",
+      "status": "http://environment.data.gov.uk/flood-monitoring/def/core/statusActive",
+      "town": "Rushton Spencer",
+      "type": [
+        "http://environment.data.gov.uk/flood-monitoring/def/core/SingleLevel",
+        "http://environment.data.gov.uk/flood-monitoring/def/core/Station"
+      ],
+      "wiskiID": "681003"
+    }
+  },
+  "4121": {
+    "@context": "http://environment.data.gov.uk/flood-monitoring/meta/context.jsonld",
+    "meta": {
+      "publisher": "Environment Agency",
+      "licence": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "documentation": "http://environment.data.gov.uk/flood-monitoring/doc/reference",
+      "version": "0.9",
+      "comment": "Status: Beta service",
+      "hasFormat": [
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4121.rdf",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4121.ttl",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4121.html"
+      ]
+    },
+    "items": {
+      "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4121",
+      "RLOIid": "2149",
+      "catchmentName": "Dove",
+      "dateOpened": "1998-04-07",
+      "eaAreaName": "Midlands - Staffordshire Warwickshire and West Midlands",
+      "eaRegionName": "Midlands",
+      "easting": 400800,
+      "label": "Upper Tean",
+      "lat": 52.953586,
+      "long": -1.989532,
+      "measures": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/4121-level-stage-i-15_min-mASD",
+        "datumType": "http://environment.data.gov.uk/flood-monitoring/def/core/datumASD",
+        "label": "Upper Tean LVL - level-stage-i-15_min-mASD",
+        "latestReading": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/data/readings/4121-level-stage-i-15_min-mASD/2026-10-23T14-15-00Z",
+          "date": "2026-10-23",
+          "dateTime": "2026-10-23T14:15:00Z",
+          "measure": "http://environment.data.gov.uk/flood-monitoring/id/measures/4121-level-stage-i-15_min-mASD",
+          "value": 0.786
+        },
+        "notation": "4121-level-stage-i-15_min-mASD",
+        "parameter": "level",
+        "parameterName": "Water Level",
+        "period": 900,
+        "qualifier": "Stage",
+        "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/4121",
+        "stationReference": "4121",
+        "type": [
+          "http://environment.data.gov.uk/flood-monitoring/def/core/Measure",
+          "http://environment.data.gov.uk/flood-monitoring/def/core/WaterLevel"
+        ],
+        "unit": "http://qudt.org/1.1/vocab/unit#Meter",
+        "unitName": "mASD",
+        "valueType": "instantaneous"
+      },
+      "northing": 339580,
+      "notation": "4121",
+      "riverName": "River Tean",
+      "stageScale": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4121/stageScale",
+        "datum": 128.29,
+        "highestRecent": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4121/stageScale/highestRecent",
+          "dateTime": "2012-07-06T13:30:00",
+          "value": 1.665
+        },
+        "maxOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4121/stageScale/maxOnRecord",
+          "dateTime": "2000-11-06T06:15:00",
+          "value": 1.934
+        },
+        "minOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4121/stageScale/minOnRecord",
+          "dateTime": "1998-10-17T10:15:00",
+          "value": 0.034
+        },
+        "scaleMax": 3,
+        "typicalRangeHigh": 0.4,
+        "typicalRangeLow": 0.039
+      },
+      "stationReference": "4121",
+      "status": "http://environment.data.gov.uk/flood-monitoring/def/core/statusActive",
+      "town": "Upper Tean",
+      "type": [
+        "http://environment.data.gov.uk/flood-monitoring/def/core/SingleLevel",
+        "http://environment.data.gov.uk/flood-monitoring/def/core/Station"
+      ],
+      "wiskiID": "4121"
+    }
+  },
+  "4061": {
+    "@context": "http://environment.data.gov.uk/flood-monitoring/meta/context.jsonld",
+    "meta": {
+      "publisher": "Environment Agency",
+      "licence": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "documentation": "http://environment.data.gov.uk/flood-monitoring/doc/reference",
+      "version": "0.9",
+      "comment": "Status: Beta service",
+      "hasFormat": [
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4061.rdf",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4061.ttl",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4061.html"
+      ]
+    },
+    "items": {
+      "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4061",
+      "RLOIid": "2127",
+      "catchmentName": "Dove",
+      "dateOpened": "1975-01-01",
+      "downstageScale": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4061/downstageScale",
+        "datum": 132.9,
+        "highestRecent": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4061/downstageScale/highestRecent",
+          "dateTime": "2014-02-01T00:30:00",
+          "value": 2.227
+        },
+        "maxOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4061/downstageScale/maxOnRecord",
+          "dateTime": "2021-01-21T01:15:00",
+          "value": 2.428
+        },
+        "minOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4061/downstageScale/minOnRecord",
+          "dateTime": "2013-04-28T07:30:00",
+          "value": -0.056
+        },
+        "scaleMax": 3,
+        "typicalRangeHigh": 1.066,
+        "typicalRangeLow": -0.005
+      },
+      "eaAreaName": "Midlands - Staffordshire Warwickshire and West Midlands",
+      "eaRegionName": "Midlands",
+      "easting": 398300,
+      "label": "Basford Bridge",
+      "lat": 53.06433,
+      "long": -2.026812,
+      "measures": [
+        {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/4061-level-downstage-i-15_min-mASD",
+          "datumType": "http://environment.data.gov.uk/flood-monitoring/def/core/datumASD",
+          "label": "Basford Bridge LVL - level-downstage-i-15_min-mASD",
+          "latestReading": {
+            "@id": "http://environment.data.gov.uk/flood-monitoring/data/readings/4061-level-downstage-i-15_min-mASD/2026-10-23T14-15-00Z",
+            "date": "2026-10-23",
+            "dateTime": "2026-10-23T14:15:00Z",
+            "measure": "http://environment.data.gov.uk/flood-monitoring/id/measures/4061-level-downstage-i-15_min-mASD",
+            "value": 0.758
+          },
+          "notation": "4061-level-downstage-i-15_min-mASD",
+          "parameter": "level",
+          "parameterName": "Water Level",
+          "period": 900,
+          "qualifier": "Downstream Stage",
+          "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/4061",
+          "stationReference": "4061",
+          "type": [
+            "http://environment.data.gov.uk/flood-monitoring/def/core/Measure",
+            "http://environment.data.gov.uk/flood-monitoring/def/core/WaterLevel"
+          ],
+          "unit": "http://qudt.org/1.1/vocab/unit#Meter",
+          "unitName": "mASD",
+          "valueType": "instantaneous"
+        },
+        {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/4061-level-stage-i-15_min-mASD",
+          "datumType": "http://environment.data.gov.uk/flood-monitoring/def/core/datumASD",
+          "label": "Basford Bridge LVL - level-stage-i-15_min-mASD",
+          "latestReading": {
+            "@id": "http://environment.data.gov.uk/flood-monitoring/data/readings/4061-level-stage-i-15_min-mASD/2026-10-23T14-15-00Z",
+            "date": "2026-10-23",
+            "dateTime": "2026-10-23T14:15:00Z",
+            "measure": "http://environment.data.gov.uk/flood-monitoring/id/measures/4061-level-stage-i-15_min-mASD",
+            "value": 0.743
+          },
+          "notation": "4061-level-stage-i-15_min-mASD",
+          "parameter": "level",
+          "parameterName": "Water Level",
+          "period": 900,
+          "qualifier": "Stage",
+          "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/4061",
+          "stationReference": "4061",
+          "type": [
+            "http://environment.data.gov.uk/flood-monitoring/def/core/Measure",
+            "http://environment.data.gov.uk/flood-monitoring/def/core/WaterLevel"
+          ],
+          "unit": "http://qudt.org/1.1/vocab/unit#Meter",
+          "unitName": "mASD",
+          "valueType": "instantaneous"
+        }
+      ],
+      "northing": 351900,
+      "notation": "4061",
+      "riverName": "River Churnet",
+      "stageScale": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4061/stageScale",
+        "datum": 132.9,
+        "highestRecent": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4061/stageScale/highestRecent",
+          "dateTime": "2012-06-08T22:15:00",
+          "value": 2.546
+        },
+        "maxOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4061/stageScale/maxOnRecord",
+          "dateTime": "1987-08-23T17:00:00",
+          "value": 2.673
+        },
+        "minOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4061/stageScale/minOnRecord",
+          "dateTime": "1976-09-05T17:45:00",
+          "value": 0.14
+        },
+        "scaleMax": 3,
+        "typicalRangeHigh": 1.078,
+        "typicalRangeLow": 0.257
+      },
+      "stationReference": "4061",
+      "status": "http://environment.data.gov.uk/flood-monitoring/def/core/statusActive",
+      "town": "Cheddleton",
+      "type": [
+        "http://environment.data.gov.uk/flood-monitoring/def/core/MultiTraceLevel",
+        "http://environment.data.gov.uk/flood-monitoring/def/core/Station"
+      ],
+      "wiskiID": "4061"
+    }
+  },
+  "4052": {
+    "@context": "http://environment.data.gov.uk/flood-monitoring/meta/context.jsonld",
+    "meta": {
+      "publisher": "Environment Agency",
+      "licence": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "documentation": "http://environment.data.gov.uk/flood-monitoring/doc/reference",
+      "version": "0.9",
+      "comment": "Status: Beta service",
+      "hasFormat": [
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4052.rdf",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4052.ttl",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4052.html"
+      ]
+    },
+    "items": {
+      "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4052",
+      "RLOIid": "2122",
+      "catchmentName": "Staffordshire Trent Valley",
+      "dateOpened": "1971-01-18",
+      "eaAreaName": "Midlands - Staffordshire Warwickshire and West Midlands",
+      "eaRegionName": "Midlands",
+      "easting": 388370,
+      "label": "Great Bridgford",
+      "lat": 52.839744,
+      "long": -2.174088,
+      "measures": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/4052-level-stage-i-15_min-mASD",
+        "datumType": "http://environment.data.gov.uk/flood-monitoring/def/core/datumASD",
+        "label": "Great Bridgford LVL - level-stage-i-15_min-mASD",
+        "latestReading": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/data/readings/4052-level-stage-i-15_min-mASD/2026-10-23T14-00-00Z",
+          "date": "2026-10-23",
+          "dateTime": "2026-10-23T14:00:00Z",
+          "measure": "http://environment.data.gov.uk/flood-monitoring/id/measures/4052-level-stage-i-15_min-mASD",
+          "value": 0.468
+        },
+        "notation": "4052-level-stage-i-15_min-mASD",
+        "parameter": "level",
+        "parameterName": "Water Level",
+        "period": 900,
+        "qualifier": "Stage",
+        "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/4052",
+        "stationReference": "4052",
+        "type": [
+          "http://environment.data.gov.uk/flood-monitoring/def/core/Measure",
+          "http://environment.data.gov.uk/flood-monitoring/def/core/WaterLevel"
+        ],
+        "unit": "http://qudt.org/1.1/vocab/unit#Meter",
+        "unitName": "mASD",
+        "valueType": "instantaneous"
+      },
+      "northing": 326930,
+      "notation": "4052",
+      "riverName": "River Sow",
+      "stageScale": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4052/stageScale",
+        "datum": 77.14,
+        "highestRecent": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4052/stageScale/highestRecent",
+          "dateTime": "2012-07-10T11:15:00",
+          "value": 1.274
+        },
+        "maxOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4052/stageScale/maxOnRecord",
+          "dateTime": "2023-10-21T06:45:00",
+          "value": 1.49
+        },
+        "minOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4052/stageScale/minOnRecord",
+          "dateTime": "1976-08-31T19:15:00",
+          "value": 0.079
+        },
+        "scaleMax": 2,
+        "typicalRangeHigh": 0.539,
+        "typicalRangeLow": 0.223
+      },
+      "stationReference": "4052",
+      "status": "http://environment.data.gov.uk/flood-monitoring/def/core/statusActive",
+      "town": "Great Bridgeford",
+      "type": [
+        "http://environment.data.gov.uk/flood-monitoring/def/core/SingleLevel",
+        "http://environment.data.gov.uk/flood-monitoring/def/core/Station"
+      ],
+      "wiskiID": "4052"
+    }
+  },
+  "681006": {
+    "@context": "http://environment.data.gov.uk/flood-monitoring/meta/context.jsonld",
+    "meta": {
+      "publisher": "Environment Agency",
+      "licence": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "documentation": "http://environment.data.gov.uk/flood-monitoring/doc/reference",
+      "version": "0.9",
+      "comment": "Status: Beta service",
+      "hasFormat": [
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/681006.rdf",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/681006.ttl",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/681006.html"
+      ]
+    },
+    "items": {
+      "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/681006",
+      "RLOIid": "5036",
+      "catchmentName": "Weaver and Dane",
+      "dateOpened": "1979-11-01",
+      "eaAreaName": "North West - Greater Manchester Merseyside and Cheshire",
+      "eaRegionName": "North West",
+      "easting": 386100,
+      "label": "Congleton Park",
+      "lat": 53.166353,
+      "long": -2.209364,
+      "measures": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/681006-level-stage-i-15_min-m",
+        "label": "Congleton Park - level-stage-i-15_min-m",
+        "latestReading": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/data/readings/681006-level-stage-i-15_min-m/2026-10-23T14-15-00Z",
+          "date": "2026-10-23",
+          "dateTime": "2026-10-23T14:15:00Z",
+          "measure": "http://environment.data.gov.uk/flood-monitoring/id/measures/681006-level-stage-i-15_min-m",
+          "value": 0.282
+        },
+        "notation": "681006-level-stage-i-15_min-m",
+        "parameter": "level",
+        "parameterName": "Water Level",
+        "period": 900,
+        "qualifier": "Stage",
+        "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/681006",
+        "stationReference": "681006",
+        "type": [
+          "http://environment.data.gov.uk/flood-monitoring/def/core/Measure",
+          "http://environment.data.gov.uk/flood-monitoring/def/core/WaterLevel"
+        ],
+        "unit": "http://qudt.org/1.1/vocab/unit#Meter",
+        "unitName": "m",
+        "valueType": "instantaneous"
+      },
+      "northing": 363270,
+      "notation": "681006",
+      "riverName": "River Dane",
+      "stageScale": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/681006/stageScale",
+        "datum": 77.936,
+        "highestRecent": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/681006/stageScale/highestRecent",
+          "dateTime": "2011-02-05T19:30:00",
+          "value": 0.768
+        },
+        "maxOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/681006/stageScale/maxOnRecord",
+          "dateTime": "1998-10-23T03:30:00",
+          "value": 1.352
+        },
+        "minOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/681006/stageScale/minOnRecord",
+          "dateTime": "1984-08-05T17:00:00",
+          "value": 0.054
+        },
+        "scaleMax": 1,
+        "typicalRangeHigh": 0.7,
+        "typicalRangeLow": 0.071
+      },
+      "stationReference": "681006",
+      "status": "http://environment.data.gov.uk/flood-monitoring/def/core/statusActive",
+      "town": "Congleton",
+      "type": [
+        "http://environment.data.gov.uk/flood-monitoring/def/core/SingleLevel",
+        "http://environment.data.gov.uk/flood-monitoring/def/core/Station"
+      ],
+      "wiskiID": "681006"
+    }
+  },
+  "680403": {
+    "@context": "http://environment.data.gov.uk/flood-monitoring/meta/context.jsonld",
+    "meta": {
+      "publisher": "Environment Agency",
+      "licence": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "documentation": "http://environment.data.gov.uk/flood-monitoring/doc/reference",
+      "version": "0.9",
+      "comment": "Status: Beta service",
+      "hasFormat": [
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/680403.rdf",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/680403.ttl",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/680403.html"
+      ]
+    },
+    "items": {
+      "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/680403",
+      "RLOIid": "5097",
+      "catchmentName": "Weaver and Dane",
+      "dateOpened": "1975-03-26",
+      "eaAreaName": "North West - Greater Manchester Merseyside and Cheshire",
+      "eaRegionName": "North West",
+      "easting": 367410,
+      "label": "Marshfield Bridge",
+      "lat": 53.092995,
+      "long": -2.488097,
+      "measures": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/680403-level-stage-i-15_min-m",
+        "label": "Marshfield Bridge - level-stage-i-15_min-m",
+        "latestReading": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/data/readings/680403-level-stage-i-15_min-m/2026-10-23T14-00-00Z",
+          "date": "2026-10-23",
+          "dateTime": "2026-10-23T14:00:00Z",
+          "measure": "http://environment.data.gov.uk/flood-monitoring/id/measures/680403-level-stage-i-15_min-m",
+          "value": 0.542
+        },
+        "notation": "680403-level-stage-i-15_min-m",
+        "parameter": "level",
+        "parameterName": "Water Level",
+        "period": 900,
+        "qualifier": "Stage",
+        "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/680403",
+        "stationReference": "680403",
+        "type": [
+          "http://environment.data.gov.uk/flood-monitoring/def/core/Measure",
+          "http://environment.data.gov.uk/flood-monitoring/def/core/WaterLevel"
+        ],
+        "unit": "http://qudt.org/1.1/vocab/unit#Meter",
+        "unitName": "m",
+        "valueType": "instantaneous"
+      },
+      "northing": 355200,
+      "notation": "680403",
+      "riverName": "Valley Brook",
+      "stageScale": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/680403/stageScale",
+        "datum": 30.086,
+        "highestRecent": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/680403/stageScale/highestRecent",
+          "dateTime": "2012-09-24T13:00:00",
+          "value": 1.872
+        },
+        "maxOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/680403/stageScale/maxOnRecord",
+          "dateTime": "1977-02-11T12:15:00",
+          "value": 2.317
+        },
+        "minOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/680403/stageScale/minOnRecord",
+          "dateTime": "1996-07-22T14:30:00",
+          "value": 0.101
+        },
+        "scaleMax": 3,
+        "typicalRangeHigh": 0.553,
+        "typicalRangeLow": 0.175
+      },
+      "stationReference": "680403",
+      "status": "http://environment.data.gov.uk/flood-monitoring/def/core/statusActive",
+      "town": "Wistaston Green",
+      "type": [
+        "http://environment.data.gov.uk/flood-monitoring/def/core/SingleLevel",
+        "http://environment.data.gov.uk/flood-monitoring/def/core/Station"
+      ],
+      "wiskiID": "680403"
+    }
+  },
+  "2001": {
+    "@context": "http://environment.data.gov.uk/flood-monitoring/meta/context.jsonld",
+    "meta": {
+      "publisher": "Environment Agency",
+      "licence": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "documentation": "http://environment.data.gov.uk/flood-monitoring/doc/reference",
+      "version": "0.9",
+      "comment": "Status: Beta service",
+      "hasFormat": [
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/2001.rdf",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/2001.ttl",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/2001.html"
+      ]
+    },
+    "items": {
+      "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/2001",
+      "RLOIid": "2001",
+      "catchmentName": "Worcestershire Middle Severn",
+      "dateOpened": "1921-04-01",
+      "eaAreaName": "Midlands - Shropshire Herefordshire Worcestershire and Gloucestershire",
+      "eaRegionName": "Midlands",
+      "easting": 378150,
+      "label": "Bewdley",
+      "lat": 52.383563,
+      "long": -2.322438,
+      "measures": [
+        {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/2001-flow--i-15_min-m3_s",
+          "label": "Bewdley FLOW - flow--i-15_min-m3_s",
+          "latestReading": {
+            "@id": "http://environment.data.gov.uk/flood-monitoring/data/readings/2001-flow--i-15_min-m3_s/2026-10-23T14-15-00Z",
+            "date": "2026-10-23",
+            "dateTime": "2026-10-23T14:15:00Z",
+            "measure": "http://environment.data.gov.uk/flood-monitoring/id/measures/2001-flow--i-15_min-m3_s",
+            "value": 24.085
+          },
+          "notation": "2001-flow--i-15_min-m3_s",
+          "parameter": "flow",
+          "parameterName": "Flow",
+          "period": 900,
+          "qualifier": "",
+          "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/2001",
+          "stationReference": "2001",
+          "type": [
+            "http://environment.data.gov.uk/flood-monitoring/def/core/Flow",
+            "http://environment.data.gov.uk/flood-monitoring/def/core/Measure"
+          ],
+          "unit": "http://qudt.org/1.1/vocab/unit#CubicMeterPerSecond",
+          "unitName": "m3/s",
+          "valueType": "instantaneous"
+        },
+        {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/2001-level-stage-i-15_min-mASD",
+          "datumType": "http://environment.data.gov.uk/flood-monitoring/def/core/datumASD",
+          "label": "Bewdley FLOW - level-stage-i-15_min-mASD",
+          "latestReading": {
+            "@id": "http://environment.data.gov.uk/flood-monitoring/data/readings/2001-level-stage-i-15_min-mASD/2026-10-23T14-15-00Z",
+            "date": "2026-10-23",
+            "dateTime": "2026-10-23T14:15:00Z",
+            "measure": "http://environment.data.gov.uk/flood-monitoring/id/measures/2001-level-stage-i-15_min-mASD",
+            "value": 0.514
+          },
+          "notation": "2001-level-stage-i-15_min-mASD",
+          "parameter": "level",
+          "parameterName": "Water Level",
+          "period": 900,
+          "qualifier": "Stage",
+          "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/2001",
+          "stationReference": "2001",
+          "type": [
+            "http://environment.data.gov.uk/flood-monitoring/def/core/Measure",
+            "http://environment.data.gov.uk/flood-monitoring/def/core/WaterLevel"
+          ],
+          "unit": "http://qudt.org/1.1/vocab/unit#Meter",
+          "unitName": "mASD",
+          "valueType": "instantaneous"
+        }
+      ],
+      "northing": 276220,
+      "notation": "2001",
+      "riverName": "River Severn",
+      "stageScale": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/2001/stageScale",
+        "datum": 17,
+        "highestRecent": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/2001/stageScale/highestRecent",
+          "dateTime": "2014-02-12T18:15:00",
+          "value": 5.037
+        },
+        "maxOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/2001/stageScale/maxOnRecord",
+          "dateTime": "2000-11-02T11:00:00",
+          "value": 5.563
+        },
+        "minOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/2001/stageScale/minOnRecord",
+          "dateTime": "1976-09-04T08:45:00",
+          "value": 0.053
+        },
+        "scaleMax": 6,
+        "typicalRangeHigh": 3.3,
+        "typicalRangeLow": 0.207
+      },
+      "stationReference": "2001",
+      "status": "http://environment.data.gov.uk/flood-monitoring/def/core/statusActive",
+      "statusDate": "2019-09-18T12:33:00",
+      "town": "Bewdley",
+      "type": [
+        "http://environment.data.gov.uk/flood-monitoring/def/core/SingleLevel",
+        "http://environment.data.gov.uk/flood-monitoring/def/core/Station"
+      ],
+      "wiskiID": "2001"
+    }
+  },
+  "4079": {
+    "@context": "http://environment.data.gov.uk/flood-monitoring/meta/context.jsonld",
+    "meta": {
+      "publisher": "Environment Agency",
+      "licence": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "documentation": "http://environment.data.gov.uk/flood-monitoring/doc/reference",
+      "version": "0.9",
+      "comment": "Status: Beta service",
+      "hasFormat": [
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4079.rdf",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4079.ttl",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4079.html"
+      ]
+    },
+    "items": {
+      "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4079",
+      "RLOIid": "9112",
+      "catchmentName": "Staffordshire Trent Valley",
+      "dateOpened": "1981-11-01",
+      "eaAreaName": "Midlands - Staffordshire Warwickshire and West Midlands",
+      "eaRegionName": "Midlands",
+      "easting": 387500,
+      "gridReference": "SJ 87500 29073",
+      "label": "Shallowford",
+      "lat": 52.858989,
+      "long": -2.187087,
+      "measures": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/4079-level-stage-i-15_min-mASD",
+        "datumType": "http://environment.data.gov.uk/flood-monitoring/def/core/datumASD",
+        "label": "Shallowford LVL - level-stage-i-15_min-mASD",
+        "latestReading": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/data/readings/4079-level-stage-i-15_min-mASD/2026-10-23T14-00-00Z",
+          "date": "2026-10-23",
+          "dateTime": "2026-10-23T14:00:00Z",
+          "measure": "http://environment.data.gov.uk/flood-monitoring/id/measures/4079-level-stage-i-15_min-mASD",
+          "value": 0.29
+        },
+        "notation": "4079-level-stage-i-15_min-mASD",
+        "parameter": "level",
+        "parameterName": "Water Level",
+        "period": 900,
+        "qualifier": "Stage",
+        "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/4079",
+        "stationReference": "4079",
+        "type": [
+          "http://environment.data.gov.uk/flood-monitoring/def/core/Measure",
+          "http://environment.data.gov.uk/flood-monitoring/def/core/WaterLevel"
+        ],
+        "unit": "http://qudt.org/1.1/vocab/unit#Meter",
+        "unitName": "mASD",
+        "valueType": "instantaneous"
+      },
+      "northing": 329073,
+      "notation": "4079",
+      "riverName": "Meece Brook",
+      "stageScale": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4079/stageScale",
+        "datum": 81.157,
+        "maxOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4079/stageScale/maxOnRecord",
+          "dateTime": "2000-11-06T17:30:00",
+          "value": 1.295
+        },
+        "minOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4079/stageScale/minOnRecord",
+          "dateTime": "1995-08-05T07:45:00",
+          "value": 0.109
+        },
+        "typicalRangeHigh": 1.2,
+        "typicalRangeLow": 0.154
+      },
+      "stationReference": "4079",
+      "status": "http://environment.data.gov.uk/flood-monitoring/def/core/statusActive",
+      "statusDate": "2017-06-19T13:42:00",
+      "type": [
+        "http://environment.data.gov.uk/flood-monitoring/def/core/SingleLevel",
+        "http://environment.data.gov.uk/flood-monitoring/def/core/Station"
+      ],
+      "wiskiID": "4079"
+    }
+  },
+  "4840": {
+    "@context": "http://environment.data.gov.uk/flood-monitoring/meta/context.jsonld",
+    "meta": {
+      "publisher": "Environment Agency",
+      "licence": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "documentation": "http://environment.data.gov.uk/flood-monitoring/doc/reference",
+      "version": "0.9",
+      "comment": "Status: Beta service",
+      "hasFormat": [
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4840.rdf",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4840.ttl",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4840.html"
+      ]
+    },
+    "items": {
+      "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4840",
+      "eaRegionName": "Midland",
+      "easting": 379286,
+      "gridReference": "SJ7928629760",
+      "label": "Walkmill LVL",
+      "lat": 52.864909070382446,
+      "long": -2.3091236314069867,
+      "measures": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/4840-level-stage-i-15_min-mASD",
+        "datumType": "http://environment.data.gov.uk/flood-monitoring/def/core/datumASD",
+        "label": "Walkmill LVL - level-stage-i-15_min-mASD",
+        "notation": "4840-level-stage-i-15_min-mASD",
+        "parameter": "level",
+        "parameterName": "Water Level",
+        "period": 900,
+        "qualifier": "Stage",
+        "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/4840",
+        "stationReference": "4840",
+        "type": [
+          "http://environment.data.gov.uk/flood-monitoring/def/core/Measure",
+          "http://environment.data.gov.uk/flood-monitoring/def/core/WaterLevel"
+        ],
+        "unit": "http://qudt.org/1.1/vocab/unit#Meter",
+        "unitName": "mASD",
+        "valueType": "instantaneous"
+      },
+      "northing": 329760,
+      "notation": "4840",
+      "stationReference": "4840",
+      "type": "http://environment.data.gov.uk/flood-monitoring/def/core/Station"
+    }
+  },
+  "4188": {
+    "@context": "http://environment.data.gov.uk/flood-monitoring/meta/context.jsonld",
+    "meta": {
+      "publisher": "Environment Agency",
+      "licence": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "documentation": "http://environment.data.gov.uk/flood-monitoring/doc/reference",
+      "version": "0.9",
+      "comment": "Status: Beta service",
+      "hasFormat": [
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4188.rdf",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4188.ttl",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4188.html"
+      ]
+    },
+    "items": {
+      "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4188",
+      "eaRegionName": "Midland",
+      "easting": 401035,
+      "gridReference": "SK0103544217",
+      "label": "Cheadle LVL",
+      "lat": 52.995269,
+      "long": -1.986021,
+      "measures": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/4188-level-stage-i-15_min-mASD",
+        "datumType": "http://environment.data.gov.uk/flood-monitoring/def/core/datumASD",
+        "label": "Cheadle LVL - level-stage-i-15_min-mASD",
+        "latestReading": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/data/readings/4188-level-stage-i-15_min-mASD/2026-10-23T14-15-00Z",
+          "date": "2026-10-23",
+          "dateTime": "2026-10-23T14:15:00Z",
+          "measure": "http://environment.data.gov.uk/flood-monitoring/id/measures/4188-level-stage-i-15_min-mASD",
+          "value": 0.624
+        },
+        "notation": "4188-level-stage-i-15_min-mASD",
+        "parameter": "level",
+        "parameterName": "Water Level",
+        "period": 900,
+        "qualifier": "Stage",
+        "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/4188",
+        "stationReference": "4188",
+        "type": [
+          "http://environment.data.gov.uk/flood-monitoring/def/core/Measure",
+          "http://environment.data.gov.uk/flood-monitoring/def/core/WaterLevel"
+        ],
+        "unit": "http://qudt.org/1.1/vocab/unit#Meter",
+        "unitName": "mASD",
+        "valueType": "instantaneous"
+      },
+      "northing": 344217,
+      "notation": "4188",
+      "stationReference": "4188",
+      "type": "http://environment.data.gov.uk/flood-monitoring/def/core/Station"
+    }
+  },
+  "4181": {
+    "@context": "http://environment.data.gov.uk/flood-monitoring/meta/context.jsonld",
+    "meta": {
+      "publisher": "Environment Agency",
+      "licence": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "documentation": "http://environment.data.gov.uk/flood-monitoring/doc/reference",
+      "version": "0.9",
+      "comment": "Status: Beta service",
+      "hasFormat": [
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4181.rdf",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4181.ttl",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4181.html"
+      ]
+    },
+    "items": {
+      "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4181",
+      "eaRegionName": "Midland",
+      "easting": 399205,
+      "gridReference": "SJ99204379",
+      "label": "Adderley (Cheadle) LVL",
+      "lat": 52.991475,
+      "long": -2.013285,
+      "measures": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/4181-level-stage-i-15_min-mASD",
+        "datumType": "http://environment.data.gov.uk/flood-monitoring/def/core/datumASD",
+        "label": "Adderley (Cheadle) LVL - level-stage-i-15_min-mASD",
+        "latestReading": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/data/readings/4181-level-stage-i-15_min-mASD/2026-10-23T14-15-00Z",
+          "date": "2026-10-23",
+          "dateTime": "2026-10-23T14:15:00Z",
+          "measure": "http://environment.data.gov.uk/flood-monitoring/id/measures/4181-level-stage-i-15_min-mASD",
+          "value": 0.567
+        },
+        "notation": "4181-level-stage-i-15_min-mASD",
+        "parameter": "level",
+        "parameterName": "Water Level",
+        "period": 900,
+        "qualifier": "Stage",
+        "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/4181",
+        "stationReference": "4181",
+        "type": [
+          "http://environment.data.gov.uk/flood-monitoring/def/core/Measure",
+          "http://environment.data.gov.uk/flood-monitoring/def/core/WaterLevel"
+        ],
+        "unit": "http://qudt.org/1.1/vocab/unit#Meter",
+        "unitName": "mASD",
+        "valueType": "instantaneous"
+      },
+      "northing": 343795,
+      "notation": "4181",
+      "stationReference": "4181",
+      "type": "http://environment.data.gov.uk/flood-monitoring/def/core/Station"
+    }
+  },
+  "4895": {
+    "@context": "http://environment.data.gov.uk/flood-monitoring/meta/context.jsonld",
+    "meta": {
+      "publisher": "Environment Agency",
+      "licence": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "documentation": "http://environment.data.gov.uk/flood-monitoring/doc/reference",
+      "version": "0.9",
+      "comment": "Status: Beta service",
+      "hasFormat": [
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4895.rdf",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4895.ttl",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4895.html"
+      ]
+    },
+    "items": {
+      "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4895",
+      "RLOIid": "9105",
+      "catchmentName": "Dove",
+      "dateOpened": "2000-06-01",
+      "eaAreaName": "Midlands - Staffordshire Warwickshire and West Midlands",
+      "eaRegionName": "Midlands",
+      "easting": 396550,
+      "gridReference": "SJ 9655 5355",
+      "label": "Wallgrange",
+      "lat": 53.079153,
+      "long": -2.052945,
+      "measures": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/4895-level-stage-i-15_min-mASD",
+        "datumType": "http://environment.data.gov.uk/flood-monitoring/def/core/datumASD",
+        "label": "Wallgrange LVL - level-stage-i-15_min-mASD",
+        "latestReading": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/data/readings/4895-level-stage-i-15_min-mASD/2026-10-23T14-15-00Z",
+          "date": "2026-10-23",
+          "dateTime": "2026-10-23T14:15:00Z",
+          "measure": "http://environment.data.gov.uk/flood-monitoring/id/measures/4895-level-stage-i-15_min-mASD",
+          "value": 0.416
+        },
+        "notation": "4895-level-stage-i-15_min-mASD",
+        "parameter": "level",
+        "parameterName": "Water Level",
+        "period": 900,
+        "qualifier": "Stage",
+        "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/4895",
+        "stationReference": "4895",
+        "type": [
+          "http://environment.data.gov.uk/flood-monitoring/def/core/Measure",
+          "http://environment.data.gov.uk/flood-monitoring/def/core/WaterLevel"
+        ],
+        "unit": "http://qudt.org/1.1/vocab/unit#Meter",
+        "unitName": "mASD",
+        "valueType": "instantaneous"
+      },
+      "northing": 353550,
+      "notation": "4895",
+      "riverName": "Endon Brook",
+      "stageScale": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4895/stageScale",
+        "datum": 133.77,
+        "maxOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4895/stageScale/maxOnRecord",
+          "dateTime": "2019-10-26T13:15:00",
+          "value": 2.279
+        },
+        "minOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4895/stageScale/minOnRecord",
+          "dateTime": "2011-07-04T18:45:00",
+          "value": 0.037
+        },
+        "typicalRangeHigh": 1.88,
+        "typicalRangeLow": 0.068
+      },
+      "stationReference": "4895",
+      "status": "http://environment.data.gov.uk/flood-monitoring/def/core/statusActive",
+      "statusDate": "2017-06-19T13:05:00",
+      "type": [
+        "http://environment.data.gov.uk/flood-monitoring/def/core/SingleLevel",
+        "http://environment.data.gov.uk/flood-monitoring/def/core/Station"
+      ],
+      "wiskiID": "4895"
+    }
+  },
+  "4165": {
+    "@context": "http://environment.data.gov.uk/flood-monitoring/meta/context.jsonld",
+    "meta": {
+      "publisher": "Environment Agency",
+      "licence": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "documentation": "http://environment.data.gov.uk/flood-monitoring/doc/reference",
+      "version": "0.9",
+      "comment": "Status: Beta service",
+      "hasFormat": [
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4165.rdf",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4165.ttl",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4165.html"
+      ]
+    },
+    "items": {
+      "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4165",
+      "RLOIid": "9098",
+      "catchmentName": "Staffordshire Trent Valley",
+      "dateOpened": "2001-06-27",
+      "eaAreaName": "Midlands - Staffordshire Warwickshire and West Midlands",
+      "eaRegionName": "Midlands",
+      "easting": 388110,
+      "gridReference": "SJ 8811 5410",
+      "label": "Brookhouse Farm",
+      "lat": 53.083974,
+      "long": -2.178955,
+      "measures": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/4165-level-stage-i-15_min-mASD",
+        "datumType": "http://environment.data.gov.uk/flood-monitoring/def/core/datumASD",
+        "label": "Brindley Ford LVL - level-stage-i-15_min-mASD",
+        "latestReading": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/data/readings/4165-level-stage-i-15_min-mASD/2026-10-23T14-00-00Z",
+          "date": "2026-10-23",
+          "dateTime": "2026-10-23T14:00:00Z",
+          "measure": "http://environment.data.gov.uk/flood-monitoring/id/measures/4165-level-stage-i-15_min-mASD",
+          "value": 0.724
+        },
+        "notation": "4165-level-stage-i-15_min-mASD",
+        "parameter": "level",
+        "parameterName": "Water Level",
+        "period": 900,
+        "qualifier": "Stage",
+        "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/4165",
+        "stationReference": "4165",
+        "type": [
+          "http://environment.data.gov.uk/flood-monitoring/def/core/Measure",
+          "http://environment.data.gov.uk/flood-monitoring/def/core/WaterLevel"
+        ],
+        "unit": "http://qudt.org/1.1/vocab/unit#Meter",
+        "unitName": "mASD",
+        "valueType": "instantaneous"
+      },
+      "northing": 354100,
+      "notation": "4165",
+      "riverName": "Ford Green Brook",
+      "stageScale": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4165/stageScale",
+        "datum": 159.357,
+        "maxOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4165/stageScale/maxOnRecord",
+          "dateTime": "2014-11-21T23:15:00",
+          "value": 1.547
+        },
+        "minOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4165/stageScale/minOnRecord",
+          "dateTime": "2014-09-29T14:30:00",
+          "value": 0.149
+        },
+        "typicalRangeHigh": 0.95,
+        "typicalRangeLow": 0.189
+      },
+      "stationReference": "4165",
+      "status": "http://environment.data.gov.uk/flood-monitoring/def/core/statusActive",
+      "statusDate": "2017-06-19T12:08:00",
+      "type": [
+        "http://environment.data.gov.uk/flood-monitoring/def/core/SingleLevel",
+        "http://environment.data.gov.uk/flood-monitoring/def/core/Station"
+      ],
+      "wiskiID": "4165"
+    }
+  },
+  "4152": {
+    "@context": "http://environment.data.gov.uk/flood-monitoring/meta/context.jsonld",
+    "meta": {
+      "publisher": "Environment Agency",
+      "licence": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "documentation": "http://environment.data.gov.uk/flood-monitoring/doc/reference",
+      "version": "0.9",
+      "comment": "Status: Beta service",
+      "hasFormat": [
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4152.rdf",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4152.ttl",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4152.html"
+      ]
+    },
+    "items": {
+      "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4152",
+      "RLOIid": "9099",
+      "catchmentName": "Staffordshire Trent Valley",
+      "dateOpened": "2000-11-01",
+      "eaAreaName": "Midlands - Staffordshire Warwickshire and West Midlands",
+      "eaRegionName": "Midlands",
+      "easting": 384746,
+      "gridReference": "SJ 84746 45693",
+      "label": "Newcastle Under Lyme",
+      "lat": 53.008317,
+      "long": -2.228776,
+      "measures": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/4152-level-stage-i-15_min-mASD",
+        "datumType": "http://environment.data.gov.uk/flood-monitoring/def/core/datumASD",
+        "label": "Newcastle Under Lyme LVL - level-stage-i-15_min-mASD",
+        "latestReading": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/data/readings/4152-level-stage-i-15_min-mASD/2026-10-23T13-45-00Z",
+          "date": "2026-10-23",
+          "dateTime": "2026-10-23T13:45:00Z",
+          "measure": "http://environment.data.gov.uk/flood-monitoring/id/measures/4152-level-stage-i-15_min-mASD",
+          "value": 1.262
+        },
+        "notation": "4152-level-stage-i-15_min-mASD",
+        "parameter": "level",
+        "parameterName": "Water Level",
+        "period": 900,
+        "qualifier": "Stage",
+        "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/4152",
+        "stationReference": "4152",
+        "type": [
+          "http://environment.data.gov.uk/flood-monitoring/def/core/Measure",
+          "http://environment.data.gov.uk/flood-monitoring/def/core/WaterLevel"
+        ],
+        "unit": "http://qudt.org/1.1/vocab/unit#Meter",
+        "unitName": "mASD",
+        "valueType": "instantaneous"
+      },
+      "northing": 345693,
+      "notation": "4152",
+      "riverName": "Lyme Brook",
+      "stageScale": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4152/stageScale",
+        "datum": 111.881,
+        "maxOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4152/stageScale/maxOnRecord",
+          "dateTime": "2006-08-18T09:00:00",
+          "value": 2.306
+        },
+        "minOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4152/stageScale/minOnRecord",
+          "dateTime": "2011-08-23T15:45:00",
+          "value": 0.11
+        },
+        "typicalRangeHigh": 1.5,
+        "typicalRangeLow": 0.162
+      },
+      "stationReference": "4152",
+      "status": "http://environment.data.gov.uk/flood-monitoring/def/core/statusActive",
+      "statusDate": "2017-06-19T12:44:00",
+      "type": [
+        "http://environment.data.gov.uk/flood-monitoring/def/core/SingleLevel",
+        "http://environment.data.gov.uk/flood-monitoring/def/core/Station"
+      ],
+      "wiskiID": "4152"
+    }
+  },
+  "4863": {
+    "@context": "http://environment.data.gov.uk/flood-monitoring/meta/context.jsonld",
+    "meta": {
+      "publisher": "Environment Agency",
+      "licence": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "documentation": "http://environment.data.gov.uk/flood-monitoring/doc/reference",
+      "version": "0.9",
+      "comment": "Status: Beta service",
+      "hasFormat": [
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4863.rdf",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4863.ttl",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4863.html"
+      ]
+    },
+    "items": {
+      "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4863",
+      "RLOIid": "9090",
+      "catchmentName": "Dove",
+      "dateOpened": "1987-08-17",
+      "eaAreaName": "Midlands - Staffordshire Warwickshire and West Midlands",
+      "eaRegionName": "Midlands",
+      "easting": 397650,
+      "gridReference": "SJ 9765 3906",
+      "label": "Cresswell",
+      "lat": 52.948907,
+      "long": -2.036414,
+      "measures": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/4863-level-stage-i-15_min-mASD",
+        "datumType": "http://environment.data.gov.uk/flood-monitoring/def/core/datumASD",
+        "label": "Cresswell LVL - level-stage-i-15_min-mASD",
+        "latestReading": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/data/readings/4863-level-stage-i-15_min-mASD/2026-10-23T14-00-00Z",
+          "date": "2026-10-23",
+          "dateTime": "2026-10-23T14:00:00Z",
+          "measure": "http://environment.data.gov.uk/flood-monitoring/id/measures/4863-level-stage-i-15_min-mASD",
+          "value": 0.55
+        },
+        "notation": "4863-level-stage-i-15_min-mASD",
+        "parameter": "level",
+        "parameterName": "Water Level",
+        "period": 900,
+        "qualifier": "Stage",
+        "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/4863",
+        "stationReference": "4863",
+        "type": [
+          "http://environment.data.gov.uk/flood-monitoring/def/core/Measure",
+          "http://environment.data.gov.uk/flood-monitoring/def/core/WaterLevel"
+        ],
+        "unit": "http://qudt.org/1.1/vocab/unit#Meter",
+        "unitName": "mASD",
+        "valueType": "instantaneous"
+      },
+      "northing": 339060,
+      "notation": "4863",
+      "riverName": "River Blithe",
+      "stageScale": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4863/stageScale",
+        "datum": 0,
+        "maxOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4863/stageScale/maxOnRecord",
+          "dateTime": "2000-11-06T06:15:00",
+          "value": 1.86
+        },
+        "minOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4863/stageScale/minOnRecord",
+          "dateTime": "2016-11-07T15:00:00",
+          "value": 0.113
+        },
+        "typicalRangeHigh": 0.92,
+        "typicalRangeLow": 0.357
+      },
+      "stationReference": "4863",
+      "status": "http://environment.data.gov.uk/flood-monitoring/def/core/statusActive",
+      "statusDate": "2017-06-12T13:06:00",
+      "type": [
+        "http://environment.data.gov.uk/flood-monitoring/def/core/SingleLevel",
+        "http://environment.data.gov.uk/flood-monitoring/def/core/Station"
+      ],
+      "wiskiID": "4863"
+    }
+  },
+  "4159": {
+    "@context": "http://environment.data.gov.uk/flood-monitoring/meta/context.jsonld",
+    "meta": {
+      "publisher": "Environment Agency",
+      "licence": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "documentation": "http://environment.data.gov.uk/flood-monitoring/doc/reference",
+      "version": "0.9",
+      "comment": "Status: Beta service",
+      "hasFormat": [
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4159.rdf",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4159.ttl",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4159.html"
+      ]
+    },
+    "items": {
+      "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4159",
+      "RLOIid": "9089",
+      "catchmentName": "Staffordshire Trent Valley",
+      "dateOpened": "2001-06-28",
+      "eaAreaName": "Midlands - Staffordshire Warwickshire and West Midlands",
+      "eaRegionName": "Midlands",
+      "easting": 395163,
+      "gridReference": "SJ 95163 41409",
+      "label": "Blythe Bridge",
+      "lat": 52.970005,
+      "long": -2.073464,
+      "measures": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/4159-level-stage-i-15_min-mASD",
+        "datumType": "http://environment.data.gov.uk/flood-monitoring/def/core/datumASD",
+        "label": "Blythe Bridge LVL - level-stage-i-15_min-mASD",
+        "latestReading": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/data/readings/4159-level-stage-i-15_min-mASD/2026-10-23T14-15-00Z",
+          "date": "2026-10-23",
+          "dateTime": "2026-10-23T14:15:00Z",
+          "measure": "http://environment.data.gov.uk/flood-monitoring/id/measures/4159-level-stage-i-15_min-mASD",
+          "value": 0.544
+        },
+        "notation": "4159-level-stage-i-15_min-mASD",
+        "parameter": "level",
+        "parameterName": "Water Level",
+        "period": 900,
+        "qualifier": "Stage",
+        "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/4159",
+        "stationReference": "4159",
+        "type": [
+          "http://environment.data.gov.uk/flood-monitoring/def/core/Measure",
+          "http://environment.data.gov.uk/flood-monitoring/def/core/WaterLevel"
+        ],
+        "unit": "http://qudt.org/1.1/vocab/unit#Meter",
+        "unitName": "mASD",
+        "valueType": "instantaneous"
+      },
+      "northing": 341409,
+      "notation": "4159",
+      "riverName": "River Blithe",
+      "stageScale": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4159/stageScale",
+        "datum": 168.715,
+        "maxOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4159/stageScale/maxOnRecord",
+          "dateTime": "2008-09-06T15:30:00",
+          "value": 1.661
+        },
+        "minOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4159/stageScale/minOnRecord",
+          "dateTime": "2006-04-16T21:30:00",
+          "value": 0.205
+        },
+        "typicalRangeHigh": 0.94,
+        "typicalRangeLow": 0.261
+      },
+      "stationReference": "4159",
+      "status": "http://environment.data.gov.uk/flood-monitoring/def/core/statusActive",
+      "statusDate": "2017-06-12T13:01:00",
+      "type": [
+        "http://environment.data.gov.uk/flood-monitoring/def/core/SingleLevel",
+        "http://environment.data.gov.uk/flood-monitoring/def/core/Station"
+      ],
+      "wiskiID": "4159"
+    }
+  },
+  "4843": {
+    "@context": "http://environment.data.gov.uk/flood-monitoring/meta/context.jsonld",
+    "meta": {
+      "publisher": "Environment Agency",
+      "licence": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "documentation": "http://environment.data.gov.uk/flood-monitoring/doc/reference",
+      "version": "0.9",
+      "comment": "Status: Beta service",
+      "hasFormat": [
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4843.rdf",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4843.ttl",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4843.html"
+      ]
+    },
+    "items": {
+      "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4843",
+      "RLOIid": "9077",
+      "catchmentName": "Staffordshire Trent Valley",
+      "dateOpened": "2000-06-01",
+      "eaAreaName": "Midlands - Staffordshire Warwickshire and West Midlands",
+      "eaRegionName": "Midlands",
+      "easting": 386688,
+      "gridReference": "SJ86694271",
+      "label": "Hanford Bridge",
+      "lat": 52.981564,
+      "long": -2.19971,
+      "measures": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/4843-level-stage-i-15_min-mASD",
+        "datumType": "http://environment.data.gov.uk/flood-monitoring/def/core/datumASD",
+        "label": "Hanford Bridge LVL - level-stage-i-15_min-mASD",
+        "latestReading": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/data/readings/4843-level-stage-i-15_min-mASD/2026-10-23T14-00-00Z",
+          "date": "2026-10-23",
+          "dateTime": "2026-10-23T14:00:00Z",
+          "measure": "http://environment.data.gov.uk/flood-monitoring/id/measures/4843-level-stage-i-15_min-mASD",
+          "value": 1.614
+        },
+        "notation": "4843-level-stage-i-15_min-mASD",
+        "parameter": "level",
+        "parameterName": "Water Level",
+        "period": 900,
+        "qualifier": "Stage",
+        "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/4843",
+        "stationReference": "4843",
+        "type": [
+          "http://environment.data.gov.uk/flood-monitoring/def/core/Measure",
+          "http://environment.data.gov.uk/flood-monitoring/def/core/WaterLevel"
+        ],
+        "unit": "http://qudt.org/1.1/vocab/unit#Meter",
+        "unitName": "mASD",
+        "valueType": "instantaneous"
+      },
+      "northing": 342711,
+      "notation": "4843",
+      "riverName": "River Trent",
+      "stageScale": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4843/stageScale",
+        "datum": 96.134,
+        "maxOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4843/stageScale/maxOnRecord",
+          "dateTime": "2019-10-26T12:15:00",
+          "value": 2.325
+        },
+        "minOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4843/stageScale/minOnRecord",
+          "dateTime": "2004-03-30T09:00:00",
+          "value": 0.248
+        },
+        "typicalRangeHigh": 1.91,
+        "typicalRangeLow": 0.335
+      },
+      "stationReference": "4843",
+      "status": "http://environment.data.gov.uk/flood-monitoring/def/core/statusActive",
+      "statusDate": "2017-05-15T10:59:00",
+      "town": "Hanfor Bridge, Stoke-On-Trent",
+      "type": [
+        "http://environment.data.gov.uk/flood-monitoring/def/core/SingleLevel",
+        "http://environment.data.gov.uk/flood-monitoring/def/core/Station"
+      ],
+      "wiskiID": "4843"
+    }
+  },
+  "4183": {
+    "@context": "http://environment.data.gov.uk/flood-monitoring/meta/context.jsonld",
+    "meta": {
+      "publisher": "Environment Agency",
+      "licence": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "documentation": "http://environment.data.gov.uk/flood-monitoring/doc/reference",
+      "version": "0.9",
+      "comment": "Status: Beta service",
+      "hasFormat": [
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4183.rdf",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4183.ttl",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4183.html"
+      ]
+    },
+    "items": {
+      "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4183",
+      "RLOIid": "9073",
+      "catchmentName": "Dove",
+      "dateOpened": "2005-04-04",
+      "eaAreaName": "Midlands - Staffordshire Warwickshire and West Midlands",
+      "eaRegionName": "Midlands",
+      "easting": 397329,
+      "gridReference": "SJ97335260",
+      "label": "Flint Mill",
+      "lat": 53.070627,
+      "long": -2.041308,
+      "measures": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/4183-level-stage-i-15_min-mASD",
+        "datumType": "http://environment.data.gov.uk/flood-monitoring/def/core/datumASD",
+        "label": "Flint Mill LVL - level-stage-i-15_min-mASD",
+        "latestReading": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/data/readings/4183-level-stage-i-15_min-mASD/2026-10-23T14-15-00Z",
+          "date": "2026-10-23",
+          "dateTime": "2026-10-23T14:15:00Z",
+          "measure": "http://environment.data.gov.uk/flood-monitoring/id/measures/4183-level-stage-i-15_min-mASD",
+          "value": 0.738
+        },
+        "notation": "4183-level-stage-i-15_min-mASD",
+        "parameter": "level",
+        "parameterName": "Water Level",
+        "period": 900,
+        "qualifier": "Stage",
+        "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/4183",
+        "stationReference": "4183",
+        "type": [
+          "http://environment.data.gov.uk/flood-monitoring/def/core/Measure",
+          "http://environment.data.gov.uk/flood-monitoring/def/core/WaterLevel"
+        ],
+        "unit": "http://qudt.org/1.1/vocab/unit#Meter",
+        "unitName": "mASD",
+        "valueType": "instantaneous"
+      },
+      "northing": 352601,
+      "notation": "4183",
+      "riverName": "River Churnet",
+      "stageScale": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4183/stageScale",
+        "datum": 134.227,
+        "maxOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4183/stageScale/maxOnRecord",
+          "dateTime": "2019-10-26T13:45:00",
+          "value": 3.37
+        },
+        "minOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4183/stageScale/minOnRecord",
+          "dateTime": "2009-06-26T04:30:00",
+          "value": 0.022
+        },
+        "typicalRangeHigh": 1.9,
+        "typicalRangeLow": 0.059
+      },
+      "stationReference": "4183",
+      "status": "http://environment.data.gov.uk/flood-monitoring/def/core/statusActive",
+      "statusDate": "2017-05-15T10:45:00",
+      "town": "Flint Mill, Cheddleton",
+      "type": [
+        "http://environment.data.gov.uk/flood-monitoring/def/core/SingleLevel",
+        "http://environment.data.gov.uk/flood-monitoring/def/core/Station"
+      ],
+      "wiskiID": "4183"
+    }
+  },
+  "4119": {
+    "@context": "http://environment.data.gov.uk/flood-monitoring/meta/context.jsonld",
+    "meta": {
+      "publisher": "Environment Agency",
+      "licence": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "documentation": "http://environment.data.gov.uk/flood-monitoring/doc/reference",
+      "version": "0.9",
+      "comment": "Status: Beta service",
+      "hasFormat": [
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4119.rdf",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4119.ttl",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4119.html"
+      ]
+    },
+    "items": {
+      "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4119",
+      "RLOIid": "9074",
+      "catchmentName": "Dove",
+      "dateOpened": "2001-01-30",
+      "eaAreaName": "Midlands - Staffordshire Warwickshire and West Midlands",
+      "eaRegionName": "Midlands",
+      "easting": 402199,
+      "gridReference": "SK02204731",
+      "label": "Froghall",
+      "lat": 53.023087,
+      "long": -1.968659,
+      "measures": [
+        {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/4119-level-logged-i-15_min-mASD",
+          "datumType": "http://environment.data.gov.uk/flood-monitoring/def/core/datumASD",
+          "label": "Froghall LVL - level-logged-i-15_min-mASD",
+          "latestReading": "http://environment.data.gov.uk/flood-monitoring/data/readings/4119-level-logged-i-15_min-mASD/2018-08-23T07-00-00Z",
+          "notation": "4119-level-logged-i-15_min-mASD",
+          "parameter": "level",
+          "parameterName": "Water Level",
+          "period": 900,
+          "qualifier": "Logged",
+          "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/4119",
+          "stationReference": "4119",
+          "type": [
+            "http://environment.data.gov.uk/flood-monitoring/def/core/Measure",
+            "http://environment.data.gov.uk/flood-monitoring/def/core/WaterLevel"
+          ],
+          "unit": "http://qudt.org/1.1/vocab/unit#Meter",
+          "unitName": "mASD",
+          "valueType": "instantaneous"
+        },
+        {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/4119-level-stage-i-15_min-mASD",
+          "datumType": "http://environment.data.gov.uk/flood-monitoring/def/core/datumASD",
+          "label": "Froghall LVL - level-stage-i-15_min-mASD",
+          "latestReading": {
+            "@id": "http://environment.data.gov.uk/flood-monitoring/data/readings/4119-level-stage-i-15_min-mASD/2026-10-23T14-15-00Z",
+            "date": "2026-10-23",
+            "dateTime": "2026-10-23T14:15:00Z",
+            "measure": "http://environment.data.gov.uk/flood-monitoring/id/measures/4119-level-stage-i-15_min-mASD",
+            "value": 0.863
+          },
+          "notation": "4119-level-stage-i-15_min-mASD",
+          "parameter": "level",
+          "parameterName": "Water Level",
+          "period": 900,
+          "qualifier": "Stage",
+          "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/4119",
+          "stationReference": "4119",
+          "type": [
+            "http://environment.data.gov.uk/flood-monitoring/def/core/Measure",
+            "http://environment.data.gov.uk/flood-monitoring/def/core/WaterLevel"
+          ],
+          "unit": "http://qudt.org/1.1/vocab/unit#Meter",
+          "unitName": "mASD",
+          "valueType": "instantaneous"
+        }
+      ],
+      "northing": 347312,
+      "notation": "4119",
+      "riverName": "River Churnet",
+      "stageScale": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4119/stageScale",
+        "datum": 116.92,
+        "maxOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4119/stageScale/maxOnRecord",
+          "dateTime": "2019-10-26T13:15:00",
+          "value": 2.98
+        },
+        "minOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4119/stageScale/minOnRecord",
+          "dateTime": "2010-07-11T11:15:00",
+          "value": 0
+        },
+        "typicalRangeHigh": 2.1,
+        "typicalRangeLow": 0.02
+      },
+      "stationReference": "4119",
+      "status": "http://environment.data.gov.uk/flood-monitoring/def/core/statusActive",
+      "statusDate": "2017-05-15T10:49:00",
+      "town": "Froghall",
+      "type": [
+        "http://environment.data.gov.uk/flood-monitoring/def/core/SingleLevel",
+        "http://environment.data.gov.uk/flood-monitoring/def/core/Station"
+      ],
+      "wiskiID": "4119"
+    }
+  },
+  "4179": {
+    "@context": "http://environment.data.gov.uk/flood-monitoring/meta/context.jsonld",
+    "meta": {
+      "publisher": "Environment Agency",
+      "licence": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "documentation": "http://environment.data.gov.uk/flood-monitoring/doc/reference",
+      "version": "0.9",
+      "comment": "Status: Beta service",
+      "hasFormat": [
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4179.rdf",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4179.ttl",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4179.html"
+      ]
+    },
+    "items": {
+      "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4179",
+      "RLOIid": "9068",
+      "catchmentName": "Staffordshire Trent Valley",
+      "dateOpened": "2003-04-12",
+      "eaAreaName": "Midlands - Staffordshire Warwickshire and West Midlands",
+      "eaRegionName": "Midlands",
+      "easting": 389614,
+      "gridReference": "SJ89615405",
+      "label": "Knypersley",
+      "lat": 53.08361,
+      "long": -2.1565,
+      "measures": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/4179-level-stage-i-15_min-mASD",
+        "datumType": "http://environment.data.gov.uk/flood-monitoring/def/core/datumASD",
+        "label": "Knypersley GSM LVL - level-stage-i-15_min-mASD",
+        "latestReading": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/data/readings/4179-level-stage-i-15_min-mASD/2026-10-23T14-00-00Z",
+          "date": "2026-10-23",
+          "dateTime": "2026-10-23T14:00:00Z",
+          "measure": "http://environment.data.gov.uk/flood-monitoring/id/measures/4179-level-stage-i-15_min-mASD",
+          "value": 0.49
+        },
+        "notation": "4179-level-stage-i-15_min-mASD",
+        "parameter": "level",
+        "parameterName": "Water Level",
+        "period": 900,
+        "qualifier": "Stage",
+        "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/4179",
+        "stationReference": "4179",
+        "type": [
+          "http://environment.data.gov.uk/flood-monitoring/def/core/Measure",
+          "http://environment.data.gov.uk/flood-monitoring/def/core/WaterLevel"
+        ],
+        "unit": "http://qudt.org/1.1/vocab/unit#Meter",
+        "unitName": "mASD",
+        "valueType": "instantaneous"
+      },
+      "northing": 354056,
+      "notation": "4179",
+      "riverName": "River Trent",
+      "stageScale": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4179/stageScale",
+        "datum": 159.039,
+        "maxOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4179/stageScale/maxOnRecord",
+          "dateTime": "2019-07-31T01:45:00",
+          "value": 1.238
+        },
+        "minOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4179/stageScale/minOnRecord",
+          "dateTime": "2011-07-21T11:45:00",
+          "value": 0.298
+        },
+        "typicalRangeHigh": 1.24,
+        "typicalRangeLow": 0.334
+      },
+      "stationReference": "4179",
+      "status": "http://environment.data.gov.uk/flood-monitoring/def/core/statusActive",
+      "statusDate": "2017-05-15T10:26:00",
+      "town": "Knypersley",
+      "type": [
+        "http://environment.data.gov.uk/flood-monitoring/def/core/SingleLevel",
+        "http://environment.data.gov.uk/flood-monitoring/def/core/Station"
+      ],
+      "wiskiID": "4179"
+    }
+  },
+  "4815": {
+    "@context": "http://environment.data.gov.uk/flood-monitoring/meta/context.jsonld",
+    "meta": {
+      "publisher": "Environment Agency",
+      "licence": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "documentation": "http://environment.data.gov.uk/flood-monitoring/doc/reference",
+      "version": "0.9",
+      "comment": "Status: Beta service",
+      "hasFormat": [
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4815.rdf",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4815.ttl",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4815.html"
+      ]
+    },
+    "items": {
+      "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4815",
+      "RLOIid": "9086",
+      "catchmentName": "Staffordshire Trent Valley",
+      "dateOpened": "2000-11-01",
+      "eaAreaName": "Midlands - Staffordshire Warwickshire and West Midlands",
+      "eaRegionName": "Midlands",
+      "easting": 387648,
+      "gridReference": "SJ 87648 45631",
+      "label": "Liverpool Road, Stoke-On-Trent",
+      "lat": 53.007835,
+      "long": -2.185525,
+      "measures": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/4815-level-stage-i-15_min-mASD",
+        "datumType": "http://environment.data.gov.uk/flood-monitoring/def/core/datumASD",
+        "label": "Liverpool Rd Stoke LVL - level-stage-i-15_min-mASD",
+        "latestReading": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/data/readings/4815-level-stage-i-15_min-mASD/2026-10-23T14-15-00Z",
+          "date": "2026-10-23",
+          "dateTime": "2026-10-23T14:15:00Z",
+          "measure": "http://environment.data.gov.uk/flood-monitoring/id/measures/4815-level-stage-i-15_min-mASD",
+          "value": 0.859
+        },
+        "notation": "4815-level-stage-i-15_min-mASD",
+        "parameter": "level",
+        "parameterName": "Water Level",
+        "period": 900,
+        "qualifier": "Stage",
+        "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/4815",
+        "stationReference": "4815",
+        "type": [
+          "http://environment.data.gov.uk/flood-monitoring/def/core/Measure",
+          "http://environment.data.gov.uk/flood-monitoring/def/core/WaterLevel"
+        ],
+        "unit": "http://qudt.org/1.1/vocab/unit#Meter",
+        "unitName": "mASD",
+        "valueType": "instantaneous"
+      },
+      "northing": 345631,
+      "notation": "4815",
+      "riverName": "Fowlea Brook",
+      "stageScale": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4815/stageScale",
+        "datum": 108.47,
+        "maxOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4815/stageScale/maxOnRecord",
+          "dateTime": "2002-09-09T16:45:00",
+          "value": 2.357
+        },
+        "minOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4815/stageScale/minOnRecord",
+          "dateTime": "2006-07-18T07:30:00",
+          "value": 0
+        },
+        "typicalRangeHigh": 1,
+        "typicalRangeLow": 0.03
+      },
+      "stationReference": "4815",
+      "status": "http://environment.data.gov.uk/flood-monitoring/def/core/statusActive",
+      "statusDate": "2017-06-12T12:50:00",
+      "type": [
+        "http://environment.data.gov.uk/flood-monitoring/def/core/SingleLevel",
+        "http://environment.data.gov.uk/flood-monitoring/def/core/Station"
+      ],
+      "wiskiID": "4815"
+    }
+  },
+  "681009": {
+    "@context": "http://environment.data.gov.uk/flood-monitoring/meta/context.jsonld",
+    "meta": {
+      "publisher": "Environment Agency",
+      "licence": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "documentation": "http://environment.data.gov.uk/flood-monitoring/doc/reference",
+      "version": "0.9",
+      "comment": "Status: Beta service",
+      "hasFormat": [
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/681009.rdf",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/681009.ttl",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/681009.html"
+      ]
+    },
+    "items": {
+      "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/681009",
+      "eaRegionName": "North West",
+      "easting": 385804,
+      "gridReference": "SJ8580462876",
+      "label": "Howty Brook",
+      "lat": 53.162803,
+      "long": -2.213773,
+      "measures": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/681009-level-stage-i-15_min-m",
+        "label": "Howty Brook - level-stage-i-15_min-m",
+        "latestReading": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/data/readings/681009-level-stage-i-15_min-m/2026-10-23T14-15-00Z",
+          "date": "2026-10-23",
+          "dateTime": "2026-10-23T14:15:00Z",
+          "measure": "http://environment.data.gov.uk/flood-monitoring/id/measures/681009-level-stage-i-15_min-m",
+          "value": 0.722
+        },
+        "notation": "681009-level-stage-i-15_min-m",
+        "parameter": "level",
+        "parameterName": "Water Level",
+        "period": 900,
+        "qualifier": "Stage",
+        "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/681009",
+        "stationReference": "681009",
+        "type": [
+          "http://environment.data.gov.uk/flood-monitoring/def/core/Measure",
+          "http://environment.data.gov.uk/flood-monitoring/def/core/WaterLevel"
+        ],
+        "unit": "http://qudt.org/1.1/vocab/unit#Meter",
+        "unitName": "m",
+        "valueType": "instantaneous"
+      },
+      "northing": 362876,
+      "notation": "681009",
+      "stationReference": "681009",
+      "type": "http://environment.data.gov.uk/flood-monitoring/def/core/Station"
+    }
+  },
+  "681290": {
+    "@context": "http://environment.data.gov.uk/flood-monitoring/meta/context.jsonld",
+    "meta": {
+      "publisher": "Environment Agency",
+      "licence": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "documentation": "http://environment.data.gov.uk/flood-monitoring/doc/reference",
+      "version": "0.9",
+      "comment": "Status: Beta service",
+      "hasFormat": [
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/681290.rdf",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/681290.ttl",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/681290.html"
+      ]
+    },
+    "items": {
+      "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/681290",
+      "RLOIid": "10450",
+      "catchmentName": "Weaver and Dane",
+      "dateOpened": "2021-10-28",
+      "eaAreaName": "North West - Greater Manchester Merseyside and Cheshire",
+      "eaRegionName": "North West",
+      "easting": 375128,
+      "gridReference": "SJ7512859080",
+      "label": "Wheelock Crewe Road",
+      "lat": 53.128288,
+      "long": -2.373152,
+      "measures": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/681290-level-stage-i-15_min-m",
+        "label": "Wheelock Crewe Road - level-stage-i-15_min-m",
+        "latestReading": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/data/readings/681290-level-stage-i-15_min-m/2026-10-23T14-15-00Z",
+          "date": "2026-10-23",
+          "dateTime": "2026-10-23T14:15:00Z",
+          "measure": "http://environment.data.gov.uk/flood-monitoring/id/measures/681290-level-stage-i-15_min-m",
+          "value": 0.516
+        },
+        "notation": "681290-level-stage-i-15_min-m",
+        "parameter": "level",
+        "parameterName": "Water Level",
+        "period": 900,
+        "qualifier": "Stage",
+        "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/681290",
+        "stationReference": "681290",
+        "type": [
+          "http://environment.data.gov.uk/flood-monitoring/def/core/Measure",
+          "http://environment.data.gov.uk/flood-monitoring/def/core/WaterLevel"
+        ],
+        "unit": "http://qudt.org/1.1/vocab/unit#Meter",
+        "unitName": "m",
+        "valueType": "instantaneous"
+      },
+      "northing": 359080,
+      "notation": "681290",
+      "riverName": "River Wheelock",
+      "stageScale": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/681290/stageScale",
+        "datum": 45.998,
+        "maxOnRecord": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/681290/stageScale/maxOnRecord",
+          "dateTime": "2025-01-02T22:15:00",
+          "value": 1.752
+        },
+        "typicalRangeHigh": 1.45
+      },
+      "stationReference": "681290",
+      "status": "http://environment.data.gov.uk/flood-monitoring/def/core/statusActive",
+      "town": "Wheelock",
+      "type": [
+        "http://environment.data.gov.uk/flood-monitoring/def/core/SingleLevel",
+        "http://environment.data.gov.uk/flood-monitoring/def/core/Station"
+      ],
+      "wiskiID": "681290"
+    }
+  },
+  "4661": {
+    "@context": "http://environment.data.gov.uk/flood-monitoring/meta/context.jsonld",
+    "meta": {
+      "publisher": "Environment Agency",
+      "licence": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "documentation": "http://environment.data.gov.uk/flood-monitoring/doc/reference",
+      "version": "0.9",
+      "comment": "Status: Beta service",
+      "hasFormat": [
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4661.rdf",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4661.ttl",
+        "http://environment.data.gov.uk/flood-monitoring/id/stations/4661.html"
+      ]
+    },
+    "items": {
+      "@id": "http://environment.data.gov.uk/flood-monitoring/id/stations/4661",
+      "eaRegionName": "Midland",
+      "easting": 384020,
+      "gridReference": "SJ8402047692",
+      "label": "Newcastle-Under-Lyme Lower Milehouse Lane",
+      "lat": 53.026265,
+      "long": -2.239695,
+      "measures": {
+        "@id": "http://environment.data.gov.uk/flood-monitoring/id/measures/4661-level-stage-i-15_min-mASD",
+        "datumType": "http://environment.data.gov.uk/flood-monitoring/def/core/datumASD",
+        "label": "Newcastle-Under-Lyme Lower Milehouse Lane - level-stage-i-15_min-mASD",
+        "latestReading": {
+          "@id": "http://environment.data.gov.uk/flood-monitoring/data/readings/4661-level-stage-i-15_min-mASD/2026-10-23T14-15-00Z",
+          "date": "2026-10-23",
+          "dateTime": "2026-10-23T14:15:00Z",
+          "measure": "http://environment.data.gov.uk/flood-monitoring/id/measures/4661-level-stage-i-15_min-mASD",
+          "value": 1.457
+        },
+        "notation": "4661-level-stage-i-15_min-mASD",
+        "parameter": "level",
+        "parameterName": "Water Level",
+        "period": 900,
+        "qualifier": "Stage",
+        "station": "http://environment.data.gov.uk/flood-monitoring/id/stations/4661",
+        "stationReference": "4661",
+        "type": [
+          "http://environment.data.gov.uk/flood-monitoring/def/core/Measure",
+          "http://environment.data.gov.uk/flood-monitoring/def/core/WaterLevel"
+        ],
+        "unit": "http://qudt.org/1.1/vocab/unit#Meter",
+        "unitName": "mASD",
+        "valueType": "instantaneous"
+      },
+      "northing": 347692,
+      "notation": "4661",
+      "stationReference": "4661",
+      "type": "http://environment.data.gov.uk/flood-monitoring/def/core/Station"
+    }
+  }
+}

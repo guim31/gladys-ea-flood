@@ -31,16 +31,19 @@ pushing.
 ## Architecture
 
 ```
-index.js                          SDK wiring only: handlers registered before connect()
-src/devices/index.js              registry of the device blueprints + dispatch helpers
-src/devices/<type>.js             one device type per file (buildDevice, onPoll, onSetValue...)
-src/scenes.js                     scene action handlers (manifest `scene_actions`)
-src/widgets.js                    dashboard widget handlers (manifest `widgets`)
+index.js                          SDK wiring only (handlers registered in src/app.js)
+src/app.js                        registers every SDK handler on the monitor, action and widget
+src/monitor.js                    followed stations, flood warnings, refresh cycles, states, triggers
+src/ea.js                         Environment Agency flood-monitoring client and parsing
+src/devices.js                    Gladys devices of a station and of the flood alerts
+src/search.js                     "Find stations" configuration action
+src/widgets.js                    dashboard widget `flood`
+src/messages.js                   texts sent from the container, four languages
 src/config.js                     DEFAULT_CONFIG (mirrors the manifest defaults) + normalization
-src/weather.js                    example driver (Open-Meteo)
-gladys-assistant-integration.json manifest: name, config_schema, actions, image...
-docs/en.md, docs/fr.md            user documentation, re-hosted by Gladys (mandatory)
-test/                             node --test, against the SDK's fake Gladys (integration-sdk/testing)
+src/http.js, geo.js, store.js     GET JSON, distances, /data persistence
+gladys-assistant-integration.json manifest: config_schema, action, scene triggers, widget
+docs/{en,fr,de,es}.md             user documentation, re-hosted by Gladys (same sections)
+test/                             node --test, against the SDK's fake Gladys and recorded answers
 .github/scripts/release.mjs       release helpers (manifest bump, changelog), tested in test/
 ```
 
@@ -70,8 +73,10 @@ test/                             node --test, against the SDK's fake Gladys (in
   `type: "provider"`: 5.1.0). `test/manifest.test.js` ties the manifest to the
   code (defaults, action, scene and widget handlers): change both sides
   together.
-- **User-facing text** is bilingual (English and French): action messages,
-  manifest texts, and `docs/en.md` / `docs/fr.md`, kept in sync.
+- **User-facing text** is in four languages (English, French, German with
+  "du", Spanish with "usted"): action messages, manifest texts, widget texts,
+  feature names, and `docs/{en,fr,de,es}.md`, kept in sync
+  (`test/i18n.test.js`).
 - **Style.** Prettier formats, ESLint catches mistakes. Comments explain why,
   in English. Tests never touch the network.
 
@@ -233,3 +238,44 @@ long, et sur un « Sie »/« Ihr… » de politesse en allemand. Le store exige 
 - Docs `en`, `fr`, `de`, `es` avec les mêmes sections.
 - Chauffe, ouverture, sécurité : ne rien rendre pilotable « comme un thermostat » ou par un assistant
   vocal quand une erreur serait dangereuse (leçon d'OctoPrint).
+
+## Environment Agency (propre à cette intégration)
+
+- API sans clé : `https://environment.data.gov.uk/flood-monitoring/`, licence **Open Government
+  Licence v3.0**. Par cycle : **une** requête
+  `data/readings?latest&stationReference=A&stationReference=B…` (le paramètre se répète, vérifié le
+  23/10/2026) et **une** `id/floods` (toutes les alertes d'Angleterre, petite). Le détail
+  `id/stations/<ref>` (mesures, `stageScale`) une fois par jour et par station ; listes
+  `id/stations?parameter=level` (~4 Mo, 4 230 stations) et `id/floodAreas` (~3 Mo, 4 208 zones)
+  une fois par semaine, **en mémoire**, seulement si besoin.
+- **`_limit=10000` sur `id/floodAreas` renvoie 500 éléments sans erreur** ; `9999` les renvoie tous.
+  Le client utilise 9999 partout.
+- Une station a souvent plusieurs mesures de niveau : `Stage` en `mASD` (cote à l'échelle) et
+  `mAOD` (souvent périmée), `Downstream Stage`, `Logged`, unités `---`… `chooseLevelMeasure` prend
+  `Stage` > `Tidal Level` > `Groundwater`, puis une mesure fraîche, puis `mASD`/`m` avant `mAOD`.
+  La plage habituelle (`typicalRangeLow/High`) est dans le repère de cette mesure (stage pour les
+  rivières, mAOD pour les nappes, vérifié sur Kingston Russell) : comparaison directe, sans `datum`.
+- Kingston (3400TH) a trois mesures de débit dont une seule fraîche : `chooseFlowMeasure` prend la
+  fraîche.
+- `value` d'une lecture peut être un tableau (anomalie connue de l'API) : on prend le premier
+  nombre. `label`, `lat`, `long` aussi, parfois.
+- Les dates des alertes (`timeRaised`, `timeSeverityChanged`) sont en **heure locale de Londres
+  sans décalage** ; celles des lectures portent un `Z`. `londonTime` convertit.
+- `id/floods` garde 24 h les alertes levées (`severityLevel` 4) : elles ne comptent pas comme en
+  cours ; une alerte passée à 4 **ou** disparue du flux déclenche `alert_lifted`.
+- Zones autour de la maison : distance au **centre** de la zone (`lat`/`long` de `id/floodAreas`),
+  calculée dans le conteneur ; seuls les codes sont gardés dans `/data`. Le filtre serveur
+  `id/floods?lat=&long=&dist=` existe, il n'est volontairement pas utilisé.
+- L'état bas/normal/haut est calculé par l'intégration (l'API n'en donne pas), avec 2 cm
+  d'hystérésis au retour à normal ; même hystérésis pour `mark_crossed`. Pas de déclencheur à seuil
+  libre : c'est une condition de scène native sur la hauteur.
+- Relecture du 23/10 : alertes levées seulement si `severityLevel` 4 ou **absentes deux lectures de
+  suite** (un flux vide passager ne lève rien) ; un changement de rayon ou de zones ne déclenche rien
+  (`data.alerts.codes` garde les zones surveillées) ; stations de marée sans état, sans tendance ni
+  repères de plage (la marée les franchit deux fois par jour), seul `max_on_record` reste ; un `Stage`
+  publié seulement en `mAOD` a ses repères décalés du `datum` ; les états ne partent que vers les
+  fonctionnalités des appareils tels que créés ; un 404 de station n'est redemandé qu'une fois par jour.
+- Widget : le cœur ne garde **qu'une liste `status` par widget** et tronque un titre (`heading`) à
+  **40 caractères** (`validateWidgetContent` le signale) : alertes et stations dans la même liste.
+- Fixtures enregistrées le 23/10/2026 vers 15 h 45 (Londres) : alertes en cours autour de
+  Newcastle-under-Lyme (maison de test), Darlaston au-dessus de sa plage habituelle.

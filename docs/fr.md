@@ -1,67 +1,198 @@
-# Template de démonstration
+# Environment Agency Flood
 
-Ceci est la documentation utilisateur de l'intégration. Gladys ré-héberge ce
-fichier et affiche un lien **Documentation** permanent vers lui dans l'écran
-de configuration (dans la langue de l'utilisateur, avec l'anglais en repli) —
-c'est au moment de configurer que l'utilisateur en a le plus besoin. Gardez
-les courtes indications d'accueil dans les blocs `section` du `config_schema`
-du manifest ; mettez ici le pas-à-pas détaillé (captures d'écran, dépannage…).
+Apporte dans Gladys les **hauteurs d'eau des rivières, des marées et des nappes d'Angleterre**
+(environ 4 000 stations : la Tamise, la Severn, la Trent, la côte…) et les **alertes crues en
+cours autour de votre maison**, depuis l'API de surveillance des crues en temps réel de
+l'**Environment Agency**. Sans compte ni clé.
+
+> **Ce n'est pas un service d'alerte crues.** Les données peuvent être en retard, manquantes ou
+> fausses, et l'intégration dépend de votre Gladys, de votre accès à Internet et d'un service
+> public. En cas de crue, suivez les alertes officielles : inscrivez-vous aux alertes gratuites
+> de l'Environment Agency, consultez
+> [Check for flooding](https://check-for-flooding.service.gov.uk/alerts-and-warnings) ou appelez
+> Floodline au 0345 988 1188 ; appelez le 999 si des vies sont en danger. Cette intégration est
+> non affiliée à l'Environment Agency.
 
 ## Ce que vous obtenez
 
-Six appareils de démonstration apparaissent après l'installation : une
-station météo (vraies données Open-Meteo), un interrupteur, une lampe
-variable, une prise connectée avec mesure de puissance, un détecteur de
-mouvement et une caméra.
+- **Un appareil par station** suivie : la **hauteur d'eau** en mètres, son **état** par rapport
+  à la plage habituelle de la station (faible, normal, élevé), le **plus haut niveau récent**,
+  le **débit** en m³/s quand la station le mesure, et la date de la dernière mesure.
+- Un **appareil « Alertes crues »** pour la zone autour de votre maison : le **niveau de
+  l'alerte la plus grave en cours** (aucune, vigilance crue, alerte crue, alerte crue grave), le
+  **nombre d'alertes en cours** et la **dernière**, en texte.
+- Une station qui n'envoie plus rien est signalée (« Pas de nouvelle mesure depuis… ») : une
+  ancienne valeur n'est jamais renvoyée comme si elle était fraîche.
+- Quatre **déclencheurs de scène** : une alerte crue est émise ou aggravée, une alerte crue est
+  levée, l'état d'une station change (faible, normal, élevé), un niveau de référence est franchi
+  (plage habituelle, plus haut niveau récent, record).
+- Un **widget de tableau de bord** : les alertes en cours autour de votre maison, puis vos
+  stations, leur hauteur, sa tendance (monte, stable, baisse) et leur état.
+- Un bouton **« Chercher des stations »** qui liste les stations autour de votre maison, par
+  nom, cours d'eau ou ville, ou par référence, avec leur hauteur actuelle.
+
+## Prérequis
+
+- Gladys Assistant **5.1.0** ou plus récent.
+- Un accès à Internet depuis Gladys : l'intégration lit `environment.data.gov.uk`.
+- Pour les alertes crues et « Stations autour de ma maison » : la position de votre maison dans
+  Gladys (Paramètres, Maisons). L'intégration la demande à l'installation (permission
+  « position »). Elle ne sert que dans le conteneur, pour choisir les stations et zones les plus
+  proches : jamais envoyée à l'Environment Agency, jamais stockée ni journalisée.
+- Angleterre seulement : le pays de Galles, l'Écosse et l'Irlande du Nord ont leurs propres
+  services.
 
 ## Configuration
 
-1. Ouvrez l'onglet **Configuration** de l'intégration.
-2. Renseignez la **latitude** et la **longitude** que la station météo de
-   démonstration doit observer (Paris par défaut), et choisissez votre unité
-   de température. L'**intervalle de rafraîchissement** règle la fréquence
-   de lecture de la station météo et de la puissance de la prise : toutes
-   les 5 minutes par défaut, toutes les minutes au plus.
-3. Enregistrez : les appareils apparaissent dans l'onglet **Découverte**,
-   prêts à être ajoutés.
+### Réglages
 
-Le réglage **Préférer la connexion locale** pilote la prise de
-démonstration : elle affiche en badge le canal réellement utilisé (local ou
-cloud), avec un point orange quand elle fonctionne en mode dégradé (local
-refusé, bascule cloud).
+| Réglage                            | Effet                                                                                                                                                                          |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Stations                           | Références ou noms de stations, séparés par des virgules : `3400TH, Bewdley, E71539`. L'adresse d'une page de station de « Check for flooding » fonctionne aussi.              |
+| Stations autour de ma maison       | Suit aussi les 3 stations les plus proches qui envoient des mesures, à 10, 20 ou 50 km de votre maison au plus.                                                                |
+| Alertes crues autour de ma maison  | Crée l'appareil « Alertes crues », pour les zones inondables dont le centre est à 5, 10 (par défaut), 20 ou 50 km de votre maison. « Non » le retire des appareils découverts. |
+| Fréquence de mise à jour           | 15, 20 ou 30 minutes. Une requête couvre toutes les stations, une autre les alertes.                                                                                           |
+| Langue des noms de fonctionnalités | Noms des fonctionnalités des nouveaux appareils (Hauteur d'eau, Débit…), et langue des textes (« Dernière mesure », « Dernière alerte ») et des variables de scène.            |
 
-## Actions
+Enregistrez, puis ouvrez l'onglet **Découverte** de l'intégration et créez les appareils
+voulus. Une station suivie le reste tant que son appareil existe, même si vous la retirez de la
+configuration.
 
-- **Tester le fournisseur météo** — effectue une requête en direct vers
-  Open-Meteo et affiche la température et l'humidité actuelles sous le
-  bouton.
-- **Identifier un appareil** — choisissez un de vos appareils dans la liste
-  et il se signale (la lampe de démonstration « clignote » dans les logs).
+### Trouver vos stations
 
-## Scènes
+Cliquez sur **« Chercher des stations »** dans la configuration. Laissez le champ vide pour
+lister les stations autour de votre maison (10 km, ou la distance choisie), ou tapez :
 
-L'intégration ajoute ses propres cartes à l'éditeur de scènes (Gladys 5.1
-ou plus récent), dans la catégorie **Intégrations** :
+- un nom de station : `Kingston`, `Bewdley` (casse et accents ignorés) ;
+- un cours d'eau ou une ville : `Severn`, `Shrewsbury` (les 10 plus proches, ou les 10 premières
+  par cours d'eau) ;
+- les deux : `Thames Windsor` ;
+- une référence de station : `3400TH`, ou l'adresse de sa page « Check for flooding ».
 
-- **Mouvement détecté** (déclencheur) — lance la scène quand un détecteur
-  de démonstration voit bouger quelque chose. Choisissez éventuellement le
-  détecteur et ce qui a bougé (personne, animal) ; laissés vides, toute
-  détection correspond. Les actions suivantes peuvent lire ce qui a bougé
-  avec `{{triggerEvent.data.target}}`.
-- **Identifier un appareil** (action) — fait se signaler l'appareil choisi.
-  Elle indique si l'appareil a pu se signaler, pour que les actions
-  suivantes puissent en dépendre.
+Chaque ligne donne la référence, le nom, le cours d'eau et la ville, la distance à votre maison
+et la hauteur actuelle, ou « pas de mesure récente ». Copiez les références dans « Stations »,
+puis enregistrez.
 
-## Tableau de bord
+## Appareils
 
-Ajoutez le widget **État de la démo** à un tableau de bord : il affiche en
-direct la température de la station météo et la puissance de la prise du
-bureau, la connexion utilisée par la prise (en orange si dégradée) et la
-position observée. Son bouton **Identifier la lampe** fait se signaler la
-lampe de démonstration.
+### Stations
+
+| Fonctionnalité                          | Type dans Gladys       | Valeur                                                                              |
+| --------------------------------------- | ---------------------- | ----------------------------------------------------------------------------------- |
+| Hauteur d'eau                           | Profondeur liquide (m) | La hauteur de la station, en mètres (voir ci-dessous).                              |
+| État du niveau d'eau (plage habituelle) | État du niveau liquide | Faible sous la plage habituelle de la station, Élevé au-dessus, Normal dedans.      |
+| Plus haut niveau récent                 | Profondeur liquide (m) | Le plus haut niveau des dernières années, un repère pour le graphique d'historique. |
+| Débit (m³/s)                            | Débit d'eau            | En m³/s (Gladys n'a pas d'unité m³/s : le nom le dit), quand la station le mesure.  |
+| Dernière mesure                         | Texte                  | Date de la dernière mesure, ou « Pas de nouvelle mesure depuis… ».                  |
+
+Une fonctionnalité n'existe que si la station la fournit. La **hauteur d'eau n'est pas une
+profondeur** : pour une rivière, c'est la cote au-dessus du zéro de l'échelle de la station
+(`mASD`) ; pour les stations de marée et de nappe, un niveau au-dessus du niveau de la mer
+(`mAOD`, Ordnance Datum) : le paramètre `LEVEL_DATUM` de l'appareil le précise. Comparez-la à la
+plage habituelle de la même station (visible sur sa page « Check for flooding »), pas à une
+autre station. Les paramètres de l'appareil donnent la référence de la station, son identifiant
+RLOI (le numéro de sa page « Check for flooding »), son cours d'eau et sa ville.
+
+La hauteur et le débit sont des fonctionnalités numériques : les scènes de Gladys savent déjà
+les comparer à une valeur de votre choix (« Hauteur d'eau au-dessus de 4,8 m »).
+
+### Alertes crues
+
+| Fonctionnalité        | Type dans Gladys | Valeur                                                                                   |
+| --------------------- | ---------------- | ---------------------------------------------------------------------------------------- |
+| Niveau d'alerte crues | Niveau de risque | 0 aucune, 1 vigilance crue, 2 alerte crue, 3 alerte crue grave : la plus grave en cours. |
+| Alertes en cours      | Compteur         | Les vigilances et alertes en cours autour de votre maison.                               |
+| Dernière alerte       | Texte            | « Alerte crue : Lyme Brook at Newcastle under Lyme (23/10 13:41) », ou aucune en cours.  |
+
+L'Environment Agency émet trois niveaux : **flood alert**, ici « vigilance crue » (une
+inondation est possible, préparez-vous), **flood warning**, « alerte crue » (une inondation est
+attendue, agissez) et **severe flood warning**, « alerte crue grave » (danger de mort). Une
+alerte est « autour de votre maison » quand le centre de sa zone inondable est à la distance
+choisie : une grande zone peut couvrir votre maison avec un centre plus éloigné, choisissez
+20 km en cas de doute.
+
+## Widget de tableau de bord
+
+Ajoutez le widget **Crues en Angleterre** à un tableau de bord.
+
+- **Sans réglage** : un titre avec l'alerte la plus grave en cours, une ligne par alerte autour
+  de votre maison (4 au plus, ou « Aucune en cours »), puis une ligne par station suivie avec sa
+  hauteur et sa tendance, colorée selon son état : bleu faible, vert normal, rouge élevé, gris
+  sans plage habituelle ou sans mesure récente.
+- **Avec une station choisie** : sa hauteur et son débit en direct, puis son état, son plus haut
+  niveau récent, sa tendance et sa dernière mesure, et un lien vers sa page « Check for
+  flooding ».
+- **Avec les alertes crues choisies** : toutes les alertes en cours autour de votre maison.
+
+## Déclencheurs de scène
+
+| Déclencheur                   | Filtres                                  | Variables                                                                                                        |
+| ----------------------------- | ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| Alerte crue émise ou aggravée | Niveau (severe, warning, alert)          | Niveau et niveau précédent (code et texte), code et nom de la zone, cours d'eau ou mer, comté, message, émise le |
+| Alerte crue levée             | Niveau qu'elle avait                     | Niveau (code et texte), code et nom de la zone, cours d'eau ou mer, comté                                        |
+| L'état du niveau d'eau change | Station, nouvel état (low, normal, high) | Nom de la station, cours d'eau, hauteur, état, état précédent (code et texte)                                    |
+| Niveau de référence franchi   | Station, niveau, sens (rising, falling)  | Nom de la station, cours d'eau, hauteur, code et nom du niveau, sa valeur, sens                                  |
+
+« Émise ou aggravée » se déclenche pour une nouvelle alerte autour de votre maison, et pour une
+alerte qui s'aggrave (une vigilance devenue alerte). « Levée » se déclenche quand une alerte
+n'est plus en vigueur, ou manque au flux deux lectures de suite (un raté du flux ne lève rien) ; changer la distance ne déclenche rien. Les niveaux de référence proposés sont le bas et
+le haut de la plage habituelle, le plus haut niveau récent et le plus haut niveau connu ; une
+station ne déclenche que ceux qu'elle a. La descente compte une fois la hauteur 2 cm sous le
+niveau, et seulement ensuite une nouvelle montée peut compter : une hauteur qui oscille autour
+ne déclenche qu'une fois.
+
+Les déclencheurs ne partent que pour un appareil que vous avez créé (la station, ou « Alertes
+crues »), sur des données fraîches, et pas après un redémarrage de plus d'un jour. La première
+lecture après l'installation ne déclenche rien : les alertes déjà en cours sont affichées par
+l'appareil et le widget.
+
+## Exemples de scènes
+
+- **Alerte crue à la maison** : « Alerte crue émise ou aggravée », niveaux warning et severe →
+  envoyer un message « {{severity_name}} : {{area_name}}. {{message}} », allumer l'entrée et
+  couper les prises de la cave.
+- **Fin d'alerte** : « Alerte crue levée » → message « Levée : {{area_name}} ».
+- **La rivière monte** : « L'état du niveau d'eau change », votre station, nouvel état Élevé →
+  prévenir la famille de déplacer la voiture.
+- **Nouveau record** : « Niveau de référence franchi », niveau « Plus haut niveau récent », passe
+  au-dessus → message « {{station_name}} : {{height}} m, au-dessus du {{mark_name}} ».
+
+## Sources, licence et quotas
+
+- Données : **Environment Agency**, API de surveillance des crues en temps réel, licence **Open
+  Government Licence v3.0** (« Contains public sector information licensed under the Open
+  Government Licence v3.0 » ; le widget cite la source).
+- Les mesures sont **quasi temps réel et non vérifiées** : elles peuvent être corrigées plus
+  tard. Les stations envoient toutes les 15 minutes, certaines moins souvent ; les alertes sont
+  mises à jour toutes les 15 minutes.
+- Sans compte, sans clé, sans quota documenté. L'intégration reste légère : **une requête par
+  mise à jour** pour les dernières mesures de toutes les stations suivies et **une** pour les
+  alertes en cours en Angleterre (15 minutes par défaut, jamais plus vite), le détail de chaque
+  station une fois par jour, la liste des stations (environ 4 Mo) et celle des zones inondables
+  (environ 3 Mo) une fois par semaine, et seulement si besoin.
 
 ## Dépannage
 
-L'intégration journalise tout ce qu'elle fait : consultez les logs de
-l'intégration depuis l'interface Gladys (ou `docker logs` sur l'hôte) avec
-`LOG_LEVEL=debug` pour le détail complet.
+- **« Station inconnue »** : vérifiez l'orthographe ou utilisez « Chercher des stations », puis
+  copiez la référence.
+- **« L'Environment Agency ne répond pas »** : le service ou votre accès à Internet est coupé ;
+  les valeurs reviennent d'elles-mêmes.
+- **« Autour de ma maison » n'ajoute rien, ou pas d'appareil « Alertes crues »** : donnez une
+  position à votre maison (Paramètres, Maisons), ou choisissez une distance plus grande.
+- **Pas de fonctionnalité d'état** : la station n'a pas de plage habituelle. Les stations de marée n'en ont jamais ici : la marée la traverse deux fois par jour.
+- **« Pas de nouvelle mesure depuis… »** : la station envoie en retard ou plus du tout ; certaines
+  envoient leurs valeurs par lots, avec quelques heures de retard.
+- **Une alerte que je reçois manque** : le centre de sa zone est plus loin que la distance
+  choisie : choisissez-en une plus grande.
+- Journaux : dans Gladys, les logs de l'intégration ; `LOG_LEVEL=debug` pour voir chaque cycle.
+
+## Limites
+
+- Aucun matériel nécessaire ; testée contre le service réel et contre des réponses enregistrées,
+  mais pas encore dans une vraie installation de Gladys : vos retours sont les bienvenus.
+- Angleterre seulement, et seulement ce que publie l'Environment Agency : pas de prévisions, pas
+  d'alertes de ruissellement ou de nappe émises par d'autres organismes.
+- La distance d'une alerte se mesure au centre de sa zone, pas à son contour.
+- 20 stations au plus depuis la configuration (plus celles dont vous avez créé l'appareil).
+- Les noms de fonctionnalités sont figés à la création de l'appareil : changer la langue ensuite
+  ne change que les textes envoyés après.
