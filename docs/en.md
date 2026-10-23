@@ -127,7 +127,7 @@ Add the **England floods** widget to a dashboard.
 
 "Issued or raised" fires for a new warning around your house, and for a warning that becomes
 more severe (a flood alert turned into a flood warning). "Lifted" fires when a warning is no
-longer in force, or leaves the feed. The reference levels offered are the bottom and top of the
+longer in force, or is missing from the feed at two readings in a row (a glitch of the feed lifts nothing); a change of the distance fires nothing. The reference levels offered are the bottom and top of the
 typical range, the highest recent level and the highest level on record; a station only fires
 the ones it has. The fall counts once the level is 2 cm below the reference, and only then can
 a new rise count: a level wobbling around it fires once.
@@ -167,7 +167,7 @@ nothing: the warnings already in force are shown by the device and the widget.
   the values come back by themselves.
 - **"Around my house" adds nothing, or no "Flood alerts" device**: give your house a location
   (Settings, Houses), or choose a larger distance.
-- **No state feature**: the station has no typical range (many tidal stations).
+- **No state feature**: the station has no typical range. Tidal stations never have one here: the tide crosses it twice a day.
 - **"No new reading since…"**: the station sends late or not at all; some send their values in
   batches, a few hours late.
 - **A warning I receive is missing**: its flood area has its centre further away than the

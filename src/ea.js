@@ -183,15 +183,23 @@ export function parseStation(raw) {
   const scale = raw.stageScale && typeof raw.stageScale === 'object' ? raw.stageScale : {};
   const level = chooseLevelMeasure(measures);
   const flow = chooseFlowMeasure(measures);
+  // The stage scale is in the reference of the stage: a river stage given only
+  // above Ordnance Datum is compared once the datum of the gauge is added.
+  const offset =
+    level?.qualifier === 'Stage' && level.unit === 'mAOD' ? (finite(scale.datum) ?? 0) : 0;
+  // The tide crosses its typical range twice a day: no state nor typical marks.
+  const tidal = level?.qualifier === 'Tidal Level';
   const marks = {};
   const add = (key, value) => {
     if (finite(value) !== null) {
-      marks[key] = finite(value);
+      marks[key] = Math.round((finite(value) + offset) * 1000) / 1000;
     }
   };
-  add('typical_low', scale.typicalRangeLow);
-  add('typical_high', scale.typicalRangeHigh);
-  add('highest_recent', scale.highestRecent?.value);
+  if (!tidal) {
+    add('typical_low', scale.typicalRangeLow);
+    add('typical_high', scale.typicalRangeHigh);
+    add('highest_recent', scale.highestRecent?.value);
+  }
   add('max_on_record', scale.maxOnRecord?.value);
   return {
     ...summary,
@@ -209,7 +217,7 @@ export function parseStation(raw) {
 export function parseReadings(items) {
   const readings = new Map();
   for (const item of items ?? []) {
-    const id = notationOf(item.measure);
+    const id = notationOf(first(item.measure));
     const t = Date.parse(item.dateTime);
     const v = finite(item.value);
     if (id && Number.isFinite(t) && v !== null && t > (readings.get(id)?.t ?? -Infinity)) {

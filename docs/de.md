@@ -135,7 +135,7 @@ Füge das Widget **Hochwasser England** einem Dashboard hinzu.
 
 „Ausgegeben oder verschärft“ löst bei einer neuen Warnung rund um dein Haus aus und bei einer
 Warnung, die schwerer wird (aus einer Vorwarnung wird eine Warnung). „Aufgehoben“ löst aus, wenn
-eine Warnung nicht mehr gilt oder aus dem Datenstrom verschwindet. Die angebotenen
+eine Warnung nicht mehr gilt oder zwei Abfragen nacheinander im Datenstrom fehlt (ein Aussetzer hebt nichts auf); eine geänderte Entfernung löst nichts aus. Die angebotenen
 Referenzstände sind Unter- und Obergrenze des üblichen Bereichs, der höchste Stand der letzten
 Jahre und der höchste gemessene Stand; eine Station löst nur die aus, die sie hat. Das Fallen
 zählt, sobald der Stand 2 cm unter dem Referenzstand liegt, und erst danach kann ein neues
@@ -179,8 +179,7 @@ Gerät und das Widget.
   gestört; die Werte kommen von selbst zurück.
 - **„Rund um mein Haus“ fügt nichts hinzu, oder kein Gerät „Hochwasserwarnungen“**: Gib deinem
   Haus einen Standort (Einstellungen, Häuser) oder wähle eine größere Entfernung.
-- **Keine Funktion für die Lage**: Die Station hat keinen üblichen Bereich (viele
-  Gezeitenstationen).
+- **Keine Funktion für die Lage**: Die Station hat keinen üblichen Bereich. Gezeitenstationen haben hier nie einen: Die Gezeiten durchqueren ihn zweimal am Tag.
 - **„Keine neue Messung seit…“**: Die Station sendet verspätet oder gar nicht; manche senden
   ihre Werte gebündelt, einige Stunden später.
 - **Eine Warnung, die ich bekomme, fehlt**: Die Mitte ihres Gebiets liegt weiter weg als die

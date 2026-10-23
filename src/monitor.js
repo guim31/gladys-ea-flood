@@ -182,6 +182,8 @@ export class Monitor {
     this.refreshTimer = null;
     this.rerun = null;
     this.stopped = false;
+    // Station references answered 404, with the time of the answer.
+    this.notFound = new Map();
     // Keys of the failures already logged, so a repeated one is not logged again.
     this.failing = new Set();
   }
@@ -416,6 +418,9 @@ export class Monitor {
       } else if (stations) {
         problems.unknown.push(token.text);
       }
+    }
+    if (this.config.homeRadiusKm === 0) {
+      this.failing.delete('home');
     }
     if (this.config.homeRadiusKm > 0 && stations) {
       try {
@@ -685,7 +690,11 @@ export class Monitor {
     changed = (await this.refreshAlerts()) || changed;
     this.forget(references);
     if (this.discoveredKey() !== before) {
-      await this.publishDiscovered();
+      // A refused discovery must not cost the states nor the memory of this cycle.
+      await this.publishDiscovered().then(
+        () => this.recovered('discovery', 'Discovered devices published again'),
+        (err) => this.failed('discovery', 'warn', `Publishing the devices failed: ${err.message}`),
+      );
     }
     await this.publishStates(this.created(), { alerts: true });
     await this.updateConnectionStatus();
@@ -732,12 +741,22 @@ export class Monitor {
       if (known && this.now() - known.fetchedAt < this.timings.stationMaxAgeMs) {
         continue;
       }
+      // A reference the service does not know is asked again once a day only.
+      const missingAt = this.notFound.get(reference);
+      if (missingAt !== undefined && this.now() - missingAt < this.timings.stationMaxAgeMs) {
+        if (this.configured.includes(reference)) {
+          unknown.push(reference);
+        }
+        continue;
+      }
       try {
         const station = await this.api.station(reference);
+        this.notFound.delete(reference);
         this.data.stations[reference] = { ...station, fetchedAt: this.now() };
-        this.foldEmbedded(reference, station);
+        await this.foldEmbedded(reference, station);
       } catch (err) {
         if (err instanceof HttpError && err.status === 404) {
+          this.notFound.set(reference, this.now());
           if (this.configured.includes(reference)) {
             unknown.push(reference);
           }
@@ -773,7 +792,10 @@ export class Monitor {
   async refreshReadings(references) {
     const known = references.filter((reference) => this.data.stations[reference]?.level);
     let changed = false;
-    if (known.length > 0) {
+    if (known.length === 0) {
+      // Nothing to read: an old outage must not keep the status disconnected.
+      this.failing.delete('readings');
+    } else {
       let live;
       try {
         live = await this.api.readings(known);
@@ -825,7 +847,8 @@ export class Monitor {
           (point) => point.t < current.t && current.t - point.t <= this.timings.historyMs,
         ),
       ];
-      const trend = trendOf(reading.history);
+      // A tide rises and falls twice a day: no trend.
+      const trend = station.level?.qualifier === 'Tidal Level' ? null : trendOf(reading.history);
       changed ||= trend !== reading.trend;
       reading.trend = trend;
       if (this.isFresh(current.t)) {
@@ -910,31 +933,46 @@ export class Monitor {
     }
     const wanted = new Set(codes);
     const now = this.now();
+    const memory = this.data.alerts;
+    const recent = memory && now - memory.at <= this.timings.memoryMs;
+    const previous = memory?.list ?? {};
+    // Areas watched at the previous reading: an area entering or leaving the
+    // radius (radius changed, areas chosen again) fires nothing by itself.
+    const watched = new Set(memory?.codes ?? codes);
+    const seen = new Map(floods.map((flood) => [flood.code, flood]));
     const current = {};
     for (const flood of floods) {
       if (wanted.has(flood.code) && flood.severity !== LIFTED) {
         current[flood.code] = flood;
       }
     }
-    const memory = this.data.alerts;
-    const recent = memory && now - memory.at <= this.timings.memoryMs;
-    const previous = memory?.list ?? {};
     const events = [];
+    for (const [code, before] of Object.entries(previous)) {
+      if (current[code] || !wanted.has(code)) {
+        continue;
+      }
+      // Gone from the feed without a "no longer in force": lifted only if still
+      // missing at the next reading (a feed glitch lifts nothing).
+      if (!seen.has(code) && !before.missing) {
+        current[code] = { ...before, missing: true };
+      } else if (recent) {
+        events.push([TRIGGERS.ALERT_LIFTED, before, null]);
+      }
+    }
     if (recent) {
       for (const [code, flood] of Object.entries(current)) {
         const before = previous[code];
+        if (flood.missing || !watched.has(code)) {
+          continue;
+        }
         if (!before || flood.severity < before.severity) {
           events.push([TRIGGERS.ALERT_RAISED, flood, before ?? null]);
         }
       }
-      for (const [code, before] of Object.entries(previous)) {
-        if (!current[code]) {
-          events.push([TRIGGERS.ALERT_LIFTED, before, null]);
-        }
-      }
+      events.sort((a, b) => (a[0] === b[0] ? 0 : a[0] === TRIGGERS.ALERT_RAISED ? -1 : 1));
     }
     const changed = JSON.stringify(previous) !== JSON.stringify(current) || !memory;
-    this.data.alerts = { at: now, list: current };
+    this.data.alerts = { at: now, codes, list: current };
     for (const [key, flood, before] of events) {
       const where = `${flood.area} (${flood.code})`;
       if (key === TRIGGERS.ALERT_LIFTED) {
@@ -1124,7 +1162,16 @@ export class Monitor {
   }
 
   async publishStates(references, options) {
-    const states = this.statesOf(references, options);
+    // Only the features of the devices as created: a station that gained a
+    // typical range since has no feature to receive it until "Update".
+    const existing = new Set(
+      (this.gladys.devices ?? []).flatMap((device) =>
+        (device.features ?? []).map((feature) => feature.external_id),
+      ),
+    );
+    const states = this.statesOf(references, options).filter((state) =>
+      existing.has(state.device_feature_external_id),
+    );
     if (states.length === 0) {
       return;
     }

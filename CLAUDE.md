@@ -269,6 +269,12 @@ long, et sur un « Sie »/« Ihr… » de politesse en allemand. Le store exige 
 - L'état bas/normal/haut est calculé par l'intégration (l'API n'en donne pas), avec 2 cm
   d'hystérésis au retour à normal ; même hystérésis pour `mark_crossed`. Pas de déclencheur à seuil
   libre : c'est une condition de scène native sur la hauteur.
+- Relecture du 23/10 : alertes levées seulement si `severityLevel` 4 ou **absentes deux lectures de
+  suite** (un flux vide passager ne lève rien) ; un changement de rayon ou de zones ne déclenche rien
+  (`data.alerts.codes` garde les zones surveillées) ; stations de marée sans état, sans tendance ni
+  repères de plage (la marée les franchit deux fois par jour), seul `max_on_record` reste ; un `Stage`
+  publié seulement en `mAOD` a ses repères décalés du `datum` ; les états ne partent que vers les
+  fonctionnalités des appareils tels que créés ; un 404 de station n'est redemandé qu'une fois par jour.
 - Widget : le cœur ne garde **qu'une liste `status` par widget** et tronque un titre (`heading`) à
   **40 caractères** (`validateWidgetContent` le signale) : alertes et stations dans la même liste.
 - Fixtures enregistrées le 23/10/2026 vers 15 h 45 (Londres) : alertes en cours autour de

@@ -52,11 +52,25 @@ test('tidal and groundwater stations: a level above Ordnance Datum, marks when g
   assert.equal(sheerness.level.qualifier, 'Tidal Level');
   assert.equal(sheerness.flow, null);
   assert.deepEqual(sheerness.marks, { max_on_record: 4.1 }, 'no typical range');
+  // A tide crosses its typical range twice a day: only the record is kept.
+  assert.deepEqual(Object.keys(station('E21563').marks), ['max_on_record']);
   const borehole = station(KINGSTON_RUSSELL);
   assert.equal(borehole.level.qualifier, 'Groundwater');
   // Groundwater typical ranges are in mAOD, like the readings.
   assert.equal(borehole.marks.typical_low, 103.665);
   assert.equal(station(BEWDLEY).marks.typical_high, 3.3);
+});
+
+test('a river stage given only above Ordnance Datum: the stage scale shifted by the datum', () => {
+  const raw = structuredClone(details[BEWDLEY].items);
+  raw.measures = raw.measures.map((m) =>
+    m.parameter === 'level'
+      ? { ...m, unitName: 'mAOD', '@id': m['@id'].replace('mASD', 'mAOD') }
+      : m,
+  );
+  const bewdley = parseStation(raw);
+  assert.equal(bewdley.level.unit, 'mAOD');
+  assert.equal(bewdley.marks.typical_high, 20.3, '3.3 + datum 17');
 });
 
 test('readings: by measure, the newest kept, a doubled value read as its first', () => {

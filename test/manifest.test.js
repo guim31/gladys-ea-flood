@@ -95,6 +95,7 @@ test('the scene triggers the monitor fires are declared, with their filters and 
   await cycle(world, 15);
   world.api.setFlood(STOKE_TRENT, null, world.clock.now());
   await cycle(world, 15);
+  await cycle(world, 15);
   const fired = new Set(world.fake.sceneEvents.map((event) => event.key));
   assert.deepEqual([...fired].sort(), Object.values(TRIGGERS).sort());
   for (const event of world.fake.sceneEvents) {

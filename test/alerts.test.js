@@ -86,8 +86,13 @@ test('raised, escalated and lifted warnings fire one event each', async (t) => {
     ['alert_raised', STOKE_TRENT, 'warning', 'alert'],
     ['alert_raised', '033FWF3FOWLEA01', 'severe', 'none'],
     ['alert_lifted', LYME_BROOK, 'warning', undefined],
-    ['alert_lifted', ASHFIELD_BROOK, 'warning', undefined],
   ]);
+  // Gone from the feed: lifted at the second reading without it (a glitch lifts nothing).
+  await cycle(world, 15);
+  assert.deepEqual(
+    world.fake.sceneEvents.slice(3).map((e) => [e.key, e.data.area_code]),
+    [['alert_lifted', ASHFIELD_BROOK]],
+  );
   const severe = world.fake.sceneEvents[1].data;
   assert.deepEqual(severe, {
     area_code: '033FWF3FOWLEA01',
@@ -136,6 +141,7 @@ test('no warning in force: level 0 and a plain text', async (t) => {
     world.api.setFlood(code, null, world.clock.now());
   }
   await cycle(world, 15);
+  await cycle(world, 15);
   const device = await create(world, 'alerts');
   assert.equal(value(world, device, 'severity'), 0);
   assert.equal(value(world, device, 'count'), 0);
@@ -181,7 +187,7 @@ test('no located house: reported, no device; radius 0: no device, no request', a
 test('a warning issued and one lifted: one info line each', async (t) => {
   const world = await withAlerts(t);
   const lines = captureLogs(t, 'info');
-  world.api.setFlood(LYME_BROOK, null, world.clock.now());
+  world.api.setFlood(LYME_BROOK, 4, world.clock.now());
   world.api.setFlood('033FWF3FOWLEA01', 3, world.clock.now());
   await cycle(world, 15);
   assert.deepEqual(
@@ -191,4 +197,25 @@ test('a warning issued and one lifted: one info line each', async (t) => {
       `[INFO] [ea-flood] Flood warning lifted: Lyme Brook at Newcastle under Lyme and Trent Vale (${LYME_BROOK})`,
     ],
   );
+});
+
+test('a radius changed, or a feed briefly empty, fires nothing', async (t) => {
+  const world = await withAlerts(t, { alerts_radius: '50' });
+  await create(world, 'alerts');
+  await world.fake.configUpdated({ alerts_radius: '5' });
+  await world.monitor.running;
+  await cycle(world, 15);
+  assert.deepEqual(
+    world.monitor.alerts().map((a) => a.code),
+    [LYME_BROOK, ASHFIELD_BROOK],
+  );
+  await world.fake.configUpdated({ alerts_radius: '10' });
+  await world.monitor.running;
+  assert.equal(world.monitor.alerts().length, 3);
+  const floods = world.api.floods.items;
+  world.api.floods.items = [];
+  await cycle(world, 15);
+  world.api.floods.items = floods;
+  await cycle(world, 15);
+  assert.deepEqual(world.fake.sceneEvents, []);
 });

@@ -135,7 +135,7 @@ Ajoutez le widget **Crues en Angleterre** à un tableau de bord.
 
 « Émise ou aggravée » se déclenche pour une nouvelle alerte autour de votre maison, et pour une
 alerte qui s'aggrave (une vigilance devenue alerte). « Levée » se déclenche quand une alerte
-n'est plus en vigueur, ou disparaît du flux. Les niveaux de référence proposés sont le bas et
+n'est plus en vigueur, ou manque au flux deux lectures de suite (un raté du flux ne lève rien) ; changer la distance ne déclenche rien. Les niveaux de référence proposés sont le bas et
 le haut de la plage habituelle, le plus haut niveau récent et le plus haut niveau connu ; une
 station ne déclenche que ceux qu'elle a. La descente compte une fois la hauteur 2 cm sous le
 niveau, et seulement ensuite une nouvelle montée peut compter : une hauteur qui oscille autour
@@ -179,8 +179,7 @@ l'appareil et le widget.
   les valeurs reviennent d'elles-mêmes.
 - **« Autour de ma maison » n'ajoute rien, ou pas d'appareil « Alertes crues »** : donnez une
   position à votre maison (Paramètres, Maisons), ou choisissez une distance plus grande.
-- **Pas de fonctionnalité d'état** : la station n'a pas de plage habituelle (beaucoup de stations
-  de marée).
+- **Pas de fonctionnalité d'état** : la station n'a pas de plage habituelle. Les stations de marée n'en ont jamais ici : la marée la traverse deux fois par jour.
 - **« Pas de nouvelle mesure depuis… »** : la station envoie en retard ou plus du tout ; certaines
   envoient leurs valeurs par lots, avec quelques heures de retard.
 - **Une alerte que je reçois manque** : le centre de sa zone est plus loin que la distance

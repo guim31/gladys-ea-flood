@@ -132,7 +132,7 @@ Añada el widget **Crecidas en Inglaterra** a un panel.
 
 «Emitido o agravado» se dispara con un aviso nuevo alrededor de su casa y con un aviso que se
 agrava (una alerta convertida en aviso). «Levantado» se dispara cuando un aviso deja de estar en
-vigor o desaparece del flujo. Los niveles de referencia ofrecidos son los límites inferior y
+vigor o falta en el flujo dos lecturas seguidas (un fallo del flujo no levanta nada); cambiar la distancia no dispara nada. Los niveles de referencia ofrecidos son los límites inferior y
 superior del rango habitual, el nivel más alto reciente y el nivel más alto registrado; una
 estación solo dispara los que tiene. La bajada cuenta cuando el nivel está 2 cm por debajo de la
 referencia, y solo entonces puede contar una nueva subida: un nivel que oscila a su alrededor
@@ -176,7 +176,7 @@ el widget.
   valores vuelven solos.
 - **«Alrededor de mi casa» no añade nada, o no hay dispositivo «Alertas de crecidas»**: indique la
   ubicación de su casa (Ajustes, Casas) o elija una distancia mayor.
-- **No hay función de estado**: la estación no tiene rango habitual (muchas estaciones de marea).
+- **No hay función de estado**: la estación no tiene rango habitual. Las estaciones de marea nunca lo tienen aquí: la marea lo cruza dos veces al día.
 - **«Sin nueva medición desde…»**: la estación envía con retraso o ya no envía; algunas envían sus
   valores por lotes, con unas horas de retraso.
 - **Falta un aviso que recibo**: el centro de su zona está más lejos que la distancia elegida:
