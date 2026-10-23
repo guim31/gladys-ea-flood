@@ -10,6 +10,8 @@ the notes of the version's GitHub Release.
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-10-23
+
 ### Added
 
 - One Gladys device per Environment Agency station in England: water level in metres (stage for
@@ -30,3 +32,6 @@ the notes of the version's GitHub Release.
 - Dashboard widget "England floods": the warnings in force and the followed stations with level,
   trend and state, or the detail of one station or of the flood alerts.
 - Texts and documentation in English, French, German and Spanish.
+
+[Unreleased]: https://github.com/guim31/gladys-ea-flood/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/guim31/gladys-ea-flood/releases/tag/v1.0.0
