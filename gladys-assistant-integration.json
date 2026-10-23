@@ -1,177 +1,1053 @@
 {
   "manifest_version": 1,
   "type": "device",
-  "name": "Demo Devices Template",
+  "name": "Environment Agency Flood",
   "description": {
-    "en": "Starter template showing sensors, a switch, a dimmable light and a smart plug.",
-    "fr": "Template de démarrage : capteurs, interrupteur, lampe variable et prise connectée."
+    "en": "River levels and flood warnings in England, from the Environment Agency.",
+    "fr": "Hauteurs des rivières et alertes crues en Angleterre, par l'Environment Agency.",
+    "de": "Pegelstände und Hochwasserwarnungen in England, von der Environment Agency.",
+    "es": "Niveles de los ríos y avisos de inundación en Inglaterra, de la Environment Agency."
   },
   "version": "1.0.0",
-  "docker_image": "ghcr.io/gladysassistant/integration-template-js:1.0.0",
+  "docker_image": "ghcr.io/guim31/gladys-ea-flood:1.0.0",
   "gladys_version": ">=5.1.0",
-  "cover_image": "https://raw.githubusercontent.com/GladysAssistant/integration-template-js/master/cover.png",
-  "categories": ["lighting", "security", "environment"],
-  "transports": ["local", "cloud"],
+  "cover_image": "https://raw.githubusercontent.com/guim31/gladys-ea-flood/main/cover.png",
+  "categories": ["environment"],
+  "transports": ["cloud"],
+  "location": true,
   "config_schema": [
     {
       "key": "intro",
       "type": "section",
-      "label": { "en": "Getting started", "fr": "Pour commencer" },
+      "label": {
+        "en": "Your stations and flood warnings",
+        "fr": "Vos stations et alertes crues",
+        "de": "Deine Stationen und Hochwasserwarnungen",
+        "es": "Sus estaciones y avisos de inundación"
+      },
       "description": {
-        "en": "The demo weather station reads real data from the free Open-Meteo API: pick the coordinates to observe. No account, no API key.",
-        "fr": "La station météo de démonstration lit de vraies données via l'API gratuite Open-Meteo : choisissez les coordonnées à observer. Pas de compte, pas de clé d'API."
+        "en": "Follow the water levels of the Environment Agency stations in England, by reference, name or near your house, and the flood warnings around your house. \"Find stations\" below lists them. Save, then create the devices in the Discover tab.",
+        "fr": "Suivez les hauteurs d'eau des stations de l'Environment Agency en Angleterre, par référence, par nom ou près de votre maison, et les alertes crues autour d'elle. « Chercher des stations » les liste. Enregistrez, puis créez les appareils dans l'onglet Découverte.",
+        "de": "Verfolge die Wasserstände der Stationen der Environment Agency in England, per Kennung, Name oder nahe deinem Haus, und die Hochwasserwarnungen rund um dein Haus. „Stationen suchen“ listet sie auf. Speichere und lege dann die Geräte im Tab „Entdecken“ an.",
+        "es": "Siga los niveles del agua de las estaciones de la Environment Agency en Inglaterra, por referencia, nombre o cerca de su casa, y los avisos de inundación a su alrededor. «Buscar estaciones» las enumera. Guarde y cree los dispositivos en la pestaña Descubrir."
       },
       "links": [
         {
-          "url": "https://open-meteo.com/en/docs",
-          "label": { "en": "Open-Meteo documentation", "fr": "Documentation Open-Meteo" }
+          "url": "https://github.com/guim31/gladys-ea-flood/blob/main/docs/en.md",
+          "label": {
+            "en": "Setup guide",
+            "fr": "Guide d'installation",
+            "de": "Installationsanleitung",
+            "es": "Guía de instalación"
+          }
         }
       ]
     },
     {
-      "key": "latitude",
-      "type": "number",
-      "label": { "en": "Latitude", "fr": "Latitude" },
-      "description": {
-        "en": "Latitude used for the demo weather sensor.",
-        "fr": "Latitude utilisée par le capteur météo de démonstration."
+      "key": "about",
+      "type": "section",
+      "label": {
+        "en": "Sources and limits",
+        "fr": "Sources et limites",
+        "de": "Quellen und Grenzen",
+        "es": "Fuentes y límites"
       },
-      "placeholder": { "en": "e.g. 48.8566", "fr": "ex. 48.8566" },
-      "required": true,
-      "default": 48.8566,
-      "min": -90,
-      "max": 90
-    },
-    {
-      "key": "longitude",
-      "type": "number",
-      "label": { "en": "Longitude", "fr": "Longitude" },
       "description": {
-        "en": "Longitude used for the demo weather sensor.",
-        "fr": "Longitude utilisée par le capteur météo de démonstration."
+        "en": "Data: Environment Agency real-time flood-monitoring API, Open Government Licence v3.0, read without an account. England only. Not a flood warning service: rely on the official warnings (Floodline 0345 988 1188). Not affiliated with the Environment Agency.",
+        "fr": "Données : API de surveillance des crues en temps réel de l'Environment Agency, Open Government Licence v3.0, lues sans compte. Angleterre seulement. Pas un service d'alerte crues : fiez-vous aux alertes officielles (Floodline 0345 988 1188). Non affiliée à l'Environment Agency.",
+        "de": "Daten: Echtzeit-API der Environment Agency zur Hochwasserüberwachung, Open Government Licence v3.0, ohne Konto gelesen. Nur England. Kein Hochwasserwarndienst: Verlass dich auf die amtlichen Warnungen (Floodline 0345 988 1188). Nicht mit der Environment Agency verbunden.",
+        "es": "Datos: API de vigilancia de crecidas en tiempo real de la Environment Agency, Open Government Licence v3.0, leídos sin cuenta. Solo Inglaterra. No es un servicio de alerta de crecidas: confíe en los avisos oficiales (Floodline 0345 988 1188). Sin afiliación con la Environment Agency."
       },
-      "placeholder": { "en": "e.g. 2.3522", "fr": "ex. 2.3522" },
-      "required": true,
-      "default": 2.3522,
-      "min": -180,
-      "max": 180
-    },
-    {
-      "key": "unit",
-      "type": "select",
-      "label": { "en": "Temperature unit", "fr": "Unité de température" },
-      "required": false,
-      "default": "celsius",
-      "options": [
-        { "value": "celsius", "label": { "en": "Celsius", "fr": "Celsius" } },
-        { "value": "fahrenheit", "label": { "en": "Fahrenheit", "fr": "Fahrenheit" } }
+      "links": [
+        {
+          "url": "https://check-for-flooding.service.gov.uk/alerts-and-warnings",
+          "label": {
+            "en": "Check for flooding",
+            "fr": "Check for flooding",
+            "de": "Check for flooding",
+            "es": "Check for flooding"
+          }
+        }
       ]
     },
     {
-      "key": "poll_frequency",
-      "type": "number",
-      "label": { "en": "Refresh interval (s)", "fr": "Intervalle de rafraîchissement (s)" },
+      "key": "stations",
+      "type": "string",
+      "label": {
+        "en": "Stations",
+        "fr": "Stations",
+        "de": "Stationen",
+        "es": "Estaciones"
+      },
       "description": {
-        "en": "How often sensors are polled, in seconds (one minute minimum).",
-        "fr": "Fréquence d'interrogation des capteurs, en secondes (une minute minimum)."
+        "en": "Station references or names, separated by commas.",
+        "fr": "Références ou noms de stations, séparés par des virgules.",
+        "de": "Stationskennungen oder -namen, durch Kommas getrennt.",
+        "es": "Referencias o nombres de estaciones, separados por comas."
+      },
+      "placeholder": {
+        "en": "e.g. 3400TH, Bewdley, E71539",
+        "fr": "ex. 3400TH, Bewdley, E71539",
+        "de": "z. B. 3400TH, Bewdley, E71539",
+        "es": "p. ej. 3400TH, Bewdley, E71539"
       },
       "required": false,
-      "default": 300,
-      "min": 60,
-      "max": 3600
+      "default": ""
+    },
+    {
+      "key": "around_home",
+      "type": "select",
+      "label": {
+        "en": "Stations around my house",
+        "fr": "Stations autour de ma maison",
+        "de": "Stationen rund um mein Haus",
+        "es": "Estaciones alrededor de mi casa"
+      },
+      "description": {
+        "en": "Also follow the 3 nearest stations that send readings, within this distance of the location of your house in Gladys.",
+        "fr": "Suivre aussi les 3 stations les plus proches qui envoient des mesures, à cette distance au plus de la position de votre maison dans Gladys.",
+        "de": "Verfolge auch die 3 nächsten Stationen, die Messwerte senden, höchstens so weit vom Standort deines Hauses in Gladys entfernt.",
+        "es": "Seguir también las 3 estaciones más cercanas que envían mediciones, como máximo a esta distancia de la ubicación de su casa en Gladys."
+      },
+      "required": false,
+      "default": "0",
+      "options": [
+        {
+          "value": "0",
+          "label": {
+            "en": "No",
+            "fr": "Non",
+            "de": "Nein",
+            "es": "No"
+          }
+        },
+        {
+          "value": "10",
+          "label": {
+            "en": "Within 10 km",
+            "fr": "À 10 km",
+            "de": "Im Umkreis von 10 km",
+            "es": "A 10 km"
+          }
+        },
+        {
+          "value": "20",
+          "label": {
+            "en": "Within 20 km",
+            "fr": "À 20 km",
+            "de": "Im Umkreis von 20 km",
+            "es": "A 20 km"
+          }
+        },
+        {
+          "value": "50",
+          "label": {
+            "en": "Within 50 km",
+            "fr": "À 50 km",
+            "de": "Im Umkreis von 50 km",
+            "es": "A 50 km"
+          }
+        }
+      ]
+    },
+    {
+      "key": "alerts_radius",
+      "type": "select",
+      "label": {
+        "en": "Flood warnings around my house",
+        "fr": "Alertes crues autour de ma maison",
+        "de": "Hochwasserwarnungen rund um mein Haus",
+        "es": "Avisos de inundación alrededor de mi casa"
+      },
+      "description": {
+        "en": "A \"Flood alerts\" device follows the flood alerts and warnings whose area has its centre within this distance of your house.",
+        "fr": "Un appareil « Alertes crues » suit les alertes dont la zone a son centre à cette distance au plus de votre maison.",
+        "de": "Ein Gerät „Hochwasserwarnungen“ verfolgt die Warnungen, deren Gebietsmitte höchstens so weit von deinem Haus entfernt ist.",
+        "es": "Un dispositivo «Alertas de crecidas» sigue los avisos cuya zona tiene su centro como máximo a esta distancia de su casa."
+      },
+      "required": false,
+      "default": "10",
+      "options": [
+        {
+          "value": "0",
+          "label": {
+            "en": "No",
+            "fr": "Non",
+            "de": "Nein",
+            "es": "No"
+          }
+        },
+        {
+          "value": "5",
+          "label": {
+            "en": "Within 5 km",
+            "fr": "À 5 km",
+            "de": "Im Umkreis von 5 km",
+            "es": "A 5 km"
+          }
+        },
+        {
+          "value": "10",
+          "label": {
+            "en": "Within 10 km",
+            "fr": "À 10 km",
+            "de": "Im Umkreis von 10 km",
+            "es": "A 10 km"
+          }
+        },
+        {
+          "value": "20",
+          "label": {
+            "en": "Within 20 km",
+            "fr": "À 20 km",
+            "de": "Im Umkreis von 20 km",
+            "es": "A 20 km"
+          }
+        },
+        {
+          "value": "50",
+          "label": {
+            "en": "Within 50 km",
+            "fr": "À 50 km",
+            "de": "Im Umkreis von 50 km",
+            "es": "A 50 km"
+          }
+        }
+      ]
+    },
+    {
+      "key": "refresh_interval",
+      "type": "select",
+      "label": {
+        "en": "Refresh interval",
+        "fr": "Fréquence de mise à jour",
+        "de": "Aktualisierungsintervall",
+        "es": "Intervalo de actualización"
+      },
+      "description": {
+        "en": "Stations send a reading every 15 minutes and the warnings are updated every 15 minutes. One request covers every station.",
+        "fr": "Les stations envoient une mesure toutes les 15 minutes et les alertes sont mises à jour toutes les 15 minutes. Une seule requête couvre toutes les stations.",
+        "de": "Die Stationen senden alle 15 Minuten einen Messwert, die Warnungen werden alle 15 Minuten aktualisiert. Eine einzige Anfrage deckt alle Stationen ab.",
+        "es": "Las estaciones envían una medición cada 15 minutos y los avisos se actualizan cada 15 minutos. Una sola solicitud cubre todas las estaciones."
+      },
+      "required": false,
+      "default": "15",
+      "options": [
+        {
+          "value": "15",
+          "label": {
+            "en": "15 minutes",
+            "fr": "15 minutes",
+            "de": "15 Minuten",
+            "es": "15 minutos"
+          }
+        },
+        {
+          "value": "20",
+          "label": {
+            "en": "20 minutes",
+            "fr": "20 minutes",
+            "de": "20 Minuten",
+            "es": "20 minutos"
+          }
+        },
+        {
+          "value": "30",
+          "label": {
+            "en": "30 minutes",
+            "fr": "30 minutes",
+            "de": "30 Minuten",
+            "es": "30 minutos"
+          }
+        }
+      ]
+    },
+    {
+      "key": "language",
+      "type": "select",
+      "label": {
+        "en": "Language of the feature names",
+        "fr": "Langue des noms de fonctionnalités",
+        "de": "Sprache der Funktionsnamen",
+        "es": "Idioma de los nombres de las funciones"
+      },
+      "description": {
+        "en": "Names given to the features of new devices (Water level, Flow…), and language of their texts and of the scene variables.",
+        "fr": "Noms donnés aux fonctionnalités des nouveaux appareils (Hauteur d'eau, Débit…), et langue de leurs textes et des variables de scène.",
+        "de": "Namen der Funktionen neuer Geräte (Wasserstand, Abfluss…) und Sprache ihrer Texte und der Szenenvariablen.",
+        "es": "Nombres de las funciones de los nuevos dispositivos (Nivel del agua, Caudal…) e idioma de sus textos y de las variables de escena."
+      },
+      "required": false,
+      "default": "fr",
+      "options": [
+        {
+          "value": "en",
+          "label": {
+            "en": "English",
+            "fr": "Anglais",
+            "de": "Englisch",
+            "es": "Inglés"
+          }
+        },
+        {
+          "value": "fr",
+          "label": {
+            "en": "French",
+            "fr": "Français",
+            "de": "Französisch",
+            "es": "Francés"
+          }
+        },
+        {
+          "value": "de",
+          "label": {
+            "en": "German",
+            "fr": "Allemand",
+            "de": "Deutsch",
+            "es": "Alemán"
+          }
+        },
+        {
+          "value": "es",
+          "label": {
+            "en": "Spanish",
+            "fr": "Espagnol",
+            "de": "Spanisch",
+            "es": "Español"
+          }
+        }
+      ]
     }
   ],
   "actions": [
     {
-      "key": "test_weather",
-      "label": { "en": "Test the weather provider", "fr": "Tester le fournisseur météo" },
-      "timeout_seconds": 30
-    },
-    {
-      "key": "identify",
-      "label": { "en": "Identify a device", "fr": "Identifier un appareil" },
+      "key": "search_stations",
+      "label": {
+        "en": "Find stations",
+        "fr": "Chercher des stations",
+        "de": "Stationen suchen",
+        "es": "Buscar estaciones"
+      },
+      "description": {
+        "en": "Lists stations with their reference, river, town, distance and current water level: around your house, by name, river or town, or by reference.",
+        "fr": "Liste les stations avec leur référence, leur cours d'eau, leur ville, leur distance et leur hauteur d'eau actuelle : autour de votre maison, par nom, cours d'eau ou ville, ou par référence.",
+        "de": "Listet Stationen mit Kennung, Gewässer, Ort, Entfernung und aktuellem Wasserstand auf: rund um dein Haus, nach Name, Gewässer oder Ort oder nach Kennung.",
+        "es": "Enumera las estaciones con su referencia, río, ciudad, distancia y nivel actual: alrededor de su casa, por nombre, río o ciudad, o por referencia."
+      },
+      "timeout_seconds": 60,
       "fields": [
         {
-          "key": "device",
+          "key": "query",
+          "type": "string",
+          "label": {
+            "en": "What",
+            "fr": "Quoi",
+            "de": "Was",
+            "es": "Qué"
+          },
+          "description": {
+            "en": "Empty: around your house. Or a station name (Kingston), a river (Severn), a town, both (Thames Windsor) or a reference.",
+            "fr": "Vide : autour de votre maison. Ou un nom de station (Kingston), un cours d'eau (Severn), une ville, les deux (Thames Windsor) ou une référence.",
+            "de": "Leer: rund um dein Haus. Oder ein Stationsname (Kingston), ein Gewässer (Severn), ein Ort, beides (Thames Windsor) oder eine Kennung.",
+            "es": "Vacío: alrededor de su casa. O un nombre de estación (Kingston), un río (Severn), una ciudad, ambos (Thames Windsor) o una referencia."
+          },
+          "placeholder": {
+            "en": "e.g. Severn",
+            "fr": "ex. Severn",
+            "de": "z. B. Severn",
+            "es": "p. ej. Severn"
+          },
+          "required": false
+        },
+        {
+          "key": "radius",
           "type": "select",
-          "source": "devices",
-          "label": { "en": "Device", "fr": "Appareil" },
-          "required": true
+          "label": {
+            "en": "Distance around the house",
+            "fr": "Distance autour de la maison",
+            "de": "Entfernung um das Haus",
+            "es": "Distancia alrededor de la casa"
+          },
+          "description": {
+            "en": "10 km when empty.",
+            "fr": "10 km si vide.",
+            "de": "10 km, wenn leer.",
+            "es": "10 km si está vacío."
+          },
+          "required": false,
+          "options": [
+            {
+              "value": "5",
+              "label": {
+                "en": "5 km",
+                "fr": "5 km",
+                "de": "5 km",
+                "es": "5 km"
+              }
+            },
+            {
+              "value": "10",
+              "label": {
+                "en": "10 km",
+                "fr": "10 km",
+                "de": "10 km",
+                "es": "10 km"
+              }
+            },
+            {
+              "value": "20",
+              "label": {
+                "en": "20 km",
+                "fr": "20 km",
+                "de": "20 km",
+                "es": "20 km"
+              }
+            },
+            {
+              "value": "50",
+              "label": {
+                "en": "50 km",
+                "fr": "50 km",
+                "de": "50 km",
+                "es": "50 km"
+              }
+            }
+          ]
         }
       ]
     }
   ],
   "scene_triggers": [
     {
-      "key": "motion_detected",
-      "label": { "en": "Motion detected", "fr": "Mouvement détecté" },
+      "key": "alert_raised",
+      "label": {
+        "en": "Flood warning issued or raised",
+        "fr": "Alerte crue émise ou aggravée",
+        "de": "Hochwasserwarnung ausgegeben oder verschärft",
+        "es": "Aviso de inundación emitido o agravado"
+      },
       "description": {
-        "en": "A demo motion sensor saw a person or an animal move.",
-        "fr": "Un détecteur de démonstration a vu bouger une personne ou un animal."
+        "en": "A flood alert, flood warning or severe flood warning is issued around the house, or an alert in force gets more severe.",
+        "fr": "Une vigilance, une alerte ou une alerte grave est émise autour de la maison, ou une alerte en cours s'aggrave.",
+        "de": "Eine Vorwarnung, Warnung oder schwere Warnung wird rund um das Haus ausgegeben, oder eine aktive Warnung wird verschärft.",
+        "es": "Se emite una alerta, un aviso o un aviso grave alrededor de la casa, o un aviso en vigor se agrava."
       },
       "fields": [
         {
-          "key": "device",
-          "type": "select",
-          "source": "devices",
-          "label": { "en": "Sensor", "fr": "Détecteur" }
-        },
-        {
-          "key": "target",
+          "key": "severity",
           "type": "multi_select",
-          "label": { "en": "What moved", "fr": "Ce qui a bougé" },
+          "label": {
+            "en": "Level",
+            "fr": "Niveau",
+            "de": "Stufe",
+            "es": "Nivel"
+          },
           "options": [
-            { "value": "person", "label": { "en": "Person", "fr": "Personne" } },
-            { "value": "animal", "label": { "en": "Animal", "fr": "Animal" } }
+            {
+              "value": "severe",
+              "label": {
+                "en": "Severe flood warning",
+                "fr": "Alerte crue grave",
+                "de": "Schwere Hochwasserwarnung",
+                "es": "Aviso grave de inundación"
+              }
+            },
+            {
+              "value": "warning",
+              "label": {
+                "en": "Flood warning",
+                "fr": "Alerte crue",
+                "de": "Hochwasserwarnung",
+                "es": "Aviso de inundación"
+              }
+            },
+            {
+              "value": "alert",
+              "label": {
+                "en": "Flood alert",
+                "fr": "Vigilance crue",
+                "de": "Hochwasservorwarnung",
+                "es": "Alerta de inundación"
+              }
+            }
           ]
         }
       ],
       "variables": [
         {
-          "key": "target",
+          "key": "severity",
           "type": "string",
-          "label": { "en": "What moved", "fr": "Ce qui a bougé" }
+          "label": {
+            "en": "Level (severe, warning, alert)",
+            "fr": "Niveau (severe, warning, alert)",
+            "de": "Stufe (severe, warning, alert)",
+            "es": "Nivel (severe, warning, alert)"
+          }
+        },
+        {
+          "key": "severity_name",
+          "type": "string",
+          "label": {
+            "en": "Level, in words",
+            "fr": "Niveau, en toutes lettres",
+            "de": "Stufe, ausgeschrieben",
+            "es": "Nivel, en palabras"
+          }
+        },
+        {
+          "key": "previous_severity",
+          "type": "string",
+          "label": {
+            "en": "Previous level (none if new)",
+            "fr": "Niveau précédent (none si nouvelle)",
+            "de": "Vorherige Stufe (none, wenn neu)",
+            "es": "Nivel anterior (none si es nuevo)"
+          }
+        },
+        {
+          "key": "previous_severity_name",
+          "type": "string",
+          "label": {
+            "en": "Previous level, in words",
+            "fr": "Niveau précédent, en toutes lettres",
+            "de": "Vorherige Stufe, ausgeschrieben",
+            "es": "Nivel anterior, en palabras"
+          }
+        },
+        {
+          "key": "area_code",
+          "type": "string",
+          "label": {
+            "en": "Flood area code",
+            "fr": "Code de la zone",
+            "de": "Kennung des Gebiets",
+            "es": "Código de la zona"
+          }
+        },
+        {
+          "key": "area_name",
+          "type": "string",
+          "label": {
+            "en": "Flood area",
+            "fr": "Zone inondable",
+            "de": "Hochwassergebiet",
+            "es": "Zona inundable"
+          }
+        },
+        {
+          "key": "river_or_sea",
+          "type": "string",
+          "label": {
+            "en": "River or sea",
+            "fr": "Cours d'eau ou mer",
+            "de": "Gewässer oder Meer",
+            "es": "Río o mar"
+          }
+        },
+        {
+          "key": "county",
+          "type": "string",
+          "label": {
+            "en": "County",
+            "fr": "Comté",
+            "de": "Grafschaft",
+            "es": "Condado"
+          }
+        },
+        {
+          "key": "message",
+          "type": "string",
+          "label": {
+            "en": "Message of the Environment Agency",
+            "fr": "Message de l'Environment Agency",
+            "de": "Nachricht der Environment Agency",
+            "es": "Mensaje de la Environment Agency"
+          }
+        },
+        {
+          "key": "time_raised",
+          "type": "string",
+          "label": {
+            "en": "Issued at",
+            "fr": "Émise le",
+            "de": "Ausgegeben am",
+            "es": "Emitido el"
+          }
         }
       ]
-    }
-  ],
-  "scene_actions": [
+    },
     {
-      "key": "identify_device",
-      "label": { "en": "Identify a device", "fr": "Identifier un appareil" },
-      "description": {
-        "en": "Make a device signal itself (the demo light blinks).",
-        "fr": "Fait se signaler un appareil (la lampe de démonstration clignote)."
+      "key": "alert_lifted",
+      "label": {
+        "en": "Flood warning lifted",
+        "fr": "Alerte crue levée",
+        "de": "Hochwasserwarnung aufgehoben",
+        "es": "Aviso de inundación levantado"
       },
-      "timeout_seconds": 15,
+      "description": {
+        "en": "A flood alert or warning around the house is no longer in force.",
+        "fr": "Une alerte autour de la maison n'est plus en vigueur.",
+        "de": "Eine Warnung rund um das Haus ist nicht mehr aktiv.",
+        "es": "Un aviso alrededor de la casa ya no está en vigor."
+      },
       "fields": [
         {
-          "key": "device",
-          "type": "select",
-          "source": "devices",
-          "label": { "en": "Device", "fr": "Appareil" },
-          "required": true
+          "key": "severity",
+          "type": "multi_select",
+          "label": {
+            "en": "Level it had",
+            "fr": "Niveau qu'elle avait",
+            "de": "Stufe, die sie hatte",
+            "es": "Nivel que tenía"
+          },
+          "options": [
+            {
+              "value": "severe",
+              "label": {
+                "en": "Severe flood warning",
+                "fr": "Alerte crue grave",
+                "de": "Schwere Hochwasserwarnung",
+                "es": "Aviso grave de inundación"
+              }
+            },
+            {
+              "value": "warning",
+              "label": {
+                "en": "Flood warning",
+                "fr": "Alerte crue",
+                "de": "Hochwasserwarnung",
+                "es": "Aviso de inundación"
+              }
+            },
+            {
+              "value": "alert",
+              "label": {
+                "en": "Flood alert",
+                "fr": "Vigilance crue",
+                "de": "Hochwasservorwarnung",
+                "es": "Alerta de inundación"
+              }
+            }
+          ]
         }
       ],
-      "outputs": [
+      "variables": [
         {
-          "key": "signalled",
-          "type": "boolean",
-          "label": { "en": "Device signalled", "fr": "Appareil signalé" }
+          "key": "severity",
+          "type": "string",
+          "label": {
+            "en": "Level it had (severe, warning, alert)",
+            "fr": "Niveau qu'elle avait (severe, warning, alert)",
+            "de": "Stufe, die sie hatte (severe, warning, alert)",
+            "es": "Nivel que tenía (severe, warning, alert)"
+          }
+        },
+        {
+          "key": "severity_name",
+          "type": "string",
+          "label": {
+            "en": "Level it had, in words",
+            "fr": "Niveau qu'elle avait, en toutes lettres",
+            "de": "Stufe, die sie hatte, ausgeschrieben",
+            "es": "Nivel que tenía, en palabras"
+          }
+        },
+        {
+          "key": "area_code",
+          "type": "string",
+          "label": {
+            "en": "Flood area code",
+            "fr": "Code de la zone",
+            "de": "Kennung des Gebiets",
+            "es": "Código de la zona"
+          }
+        },
+        {
+          "key": "area_name",
+          "type": "string",
+          "label": {
+            "en": "Flood area",
+            "fr": "Zone inondable",
+            "de": "Hochwassergebiet",
+            "es": "Zona inundable"
+          }
+        },
+        {
+          "key": "river_or_sea",
+          "type": "string",
+          "label": {
+            "en": "River or sea",
+            "fr": "Cours d'eau ou mer",
+            "de": "Gewässer oder Meer",
+            "es": "Río o mar"
+          }
+        },
+        {
+          "key": "county",
+          "type": "string",
+          "label": {
+            "en": "County",
+            "fr": "Comté",
+            "de": "Grafschaft",
+            "es": "Condado"
+          }
+        }
+      ]
+    },
+    {
+      "key": "state_changed",
+      "label": {
+        "en": "Water level state changes",
+        "fr": "L'état du niveau d'eau change",
+        "de": "Wasserstandslage ändert sich",
+        "es": "El estado del nivel cambia"
+      },
+      "description": {
+        "en": "A followed station goes below, back into or above its typical range: low, normal or high.",
+        "fr": "Une station suivie passe sous sa plage habituelle, y revient ou la dépasse : niveau faible, normal ou élevé.",
+        "de": "Eine verfolgte Station fällt unter ihren üblichen Bereich, kehrt zurück oder steigt darüber: niedrig, normal oder hoch.",
+        "es": "Una estación seguida baja de su rango habitual, vuelve a él o lo supera: nivel bajo, normal o alto."
+      },
+      "fields": [
+        {
+          "key": "station",
+          "type": "select",
+          "source": "devices",
+          "label": {
+            "en": "Station",
+            "fr": "Station",
+            "de": "Station",
+            "es": "Estación"
+          }
+        },
+        {
+          "key": "state",
+          "type": "multi_select",
+          "label": {
+            "en": "New state",
+            "fr": "Nouvel état",
+            "de": "Neue Lage",
+            "es": "Nuevo estado"
+          },
+          "options": [
+            {
+              "value": "low",
+              "label": {
+                "en": "Low",
+                "fr": "Faible",
+                "de": "Niedrig",
+                "es": "Bajo"
+              }
+            },
+            {
+              "value": "normal",
+              "label": {
+                "en": "Normal",
+                "fr": "Normal",
+                "de": "Normal",
+                "es": "Normal"
+              }
+            },
+            {
+              "value": "high",
+              "label": {
+                "en": "High",
+                "fr": "Élevé",
+                "de": "Hoch",
+                "es": "Alto"
+              }
+            }
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "key": "station_name",
+          "type": "string",
+          "label": {
+            "en": "Station name",
+            "fr": "Nom de la station",
+            "de": "Name der Station",
+            "es": "Nombre de la estación"
+          }
+        },
+        {
+          "key": "river",
+          "type": "string",
+          "label": {
+            "en": "River",
+            "fr": "Cours d'eau",
+            "de": "Gewässer",
+            "es": "Río"
+          }
+        },
+        {
+          "key": "height",
+          "type": "number",
+          "label": {
+            "en": "Water level (m)",
+            "fr": "Hauteur d'eau (m)",
+            "de": "Wasserstand (m)",
+            "es": "Nivel del agua (m)"
+          }
+        },
+        {
+          "key": "state",
+          "type": "string",
+          "label": {
+            "en": "State (low, normal, high)",
+            "fr": "État (low, normal, high)",
+            "de": "Lage (low, normal, high)",
+            "es": "Estado (low, normal, high)"
+          }
+        },
+        {
+          "key": "state_name",
+          "type": "string",
+          "label": {
+            "en": "State, in words",
+            "fr": "État, en toutes lettres",
+            "de": "Lage, ausgeschrieben",
+            "es": "Estado, en palabras"
+          }
+        },
+        {
+          "key": "previous_state",
+          "type": "string",
+          "label": {
+            "en": "Previous state",
+            "fr": "État précédent",
+            "de": "Vorherige Lage",
+            "es": "Estado anterior"
+          }
+        },
+        {
+          "key": "previous_state_name",
+          "type": "string",
+          "label": {
+            "en": "Previous state, in words",
+            "fr": "État précédent, en toutes lettres",
+            "de": "Vorherige Lage, ausgeschrieben",
+            "es": "Estado anterior, en palabras"
+          }
+        }
+      ]
+    },
+    {
+      "key": "mark_crossed",
+      "label": {
+        "en": "Reference level crossed",
+        "fr": "Niveau de référence franchi",
+        "de": "Referenzstand überschritten",
+        "es": "Nivel de referencia cruzado"
+      },
+      "description": {
+        "en": "The water level of a followed station goes above or back below one of its reference levels: typical range, highest recent level, record.",
+        "fr": "La hauteur d'une station suivie passe au-dessus ou repasse sous l'un de ses niveaux de référence : plage habituelle, plus haut niveau récent, record.",
+        "de": "Der Wasserstand einer verfolgten Station steigt über einen ihrer Referenzstände oder fällt wieder darunter: üblicher Bereich, höchster Stand der letzten Jahre, Rekord.",
+        "es": "El nivel de una estación seguida sube por encima o vuelve a bajar de uno de sus niveles de referencia: rango habitual, nivel más alto reciente, récord."
+      },
+      "fields": [
+        {
+          "key": "station",
+          "type": "select",
+          "source": "devices",
+          "label": {
+            "en": "Station",
+            "fr": "Station",
+            "de": "Station",
+            "es": "Estación"
+          }
+        },
+        {
+          "key": "mark",
+          "type": "multi_select",
+          "label": {
+            "en": "Level",
+            "fr": "Niveau",
+            "de": "Stand",
+            "es": "Nivel"
+          },
+          "options": [
+            {
+              "value": "typical_low",
+              "label": {
+                "en": "Bottom of the typical range",
+                "fr": "Bas de la plage habituelle",
+                "de": "Untergrenze des üblichen Bereichs",
+                "es": "Límite inferior del rango habitual"
+              }
+            },
+            {
+              "value": "typical_high",
+              "label": {
+                "en": "Top of the typical range",
+                "fr": "Haut de la plage habituelle",
+                "de": "Obergrenze des üblichen Bereichs",
+                "es": "Límite superior del rango habitual"
+              }
+            },
+            {
+              "value": "highest_recent",
+              "label": {
+                "en": "Highest recent level",
+                "fr": "Plus haut niveau récent",
+                "de": "Höchster Stand der letzten Jahre",
+                "es": "Nivel más alto reciente"
+              }
+            },
+            {
+              "value": "max_on_record",
+              "label": {
+                "en": "Highest level on record",
+                "fr": "Plus haut niveau connu",
+                "de": "Höchster gemessener Stand",
+                "es": "Nivel más alto registrado"
+              }
+            }
+          ]
+        },
+        {
+          "key": "direction",
+          "type": "multi_select",
+          "label": {
+            "en": "Direction",
+            "fr": "Sens",
+            "de": "Richtung",
+            "es": "Sentido"
+          },
+          "options": [
+            {
+              "value": "rising",
+              "label": {
+                "en": "Rising above",
+                "fr": "Passe au-dessus",
+                "de": "Steigt darüber",
+                "es": "Sube por encima"
+              }
+            },
+            {
+              "value": "falling",
+              "label": {
+                "en": "Falling back below",
+                "fr": "Repasse en dessous",
+                "de": "Fällt darunter",
+                "es": "Vuelve a bajar"
+              }
+            }
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "key": "station_name",
+          "type": "string",
+          "label": {
+            "en": "Station name",
+            "fr": "Nom de la station",
+            "de": "Name der Station",
+            "es": "Nombre de la estación"
+          }
+        },
+        {
+          "key": "river",
+          "type": "string",
+          "label": {
+            "en": "River",
+            "fr": "Cours d'eau",
+            "de": "Gewässer",
+            "es": "Río"
+          }
+        },
+        {
+          "key": "height",
+          "type": "number",
+          "label": {
+            "en": "Water level (m)",
+            "fr": "Hauteur d'eau (m)",
+            "de": "Wasserstand (m)",
+            "es": "Nivel del agua (m)"
+          }
+        },
+        {
+          "key": "mark",
+          "type": "string",
+          "label": {
+            "en": "Level code (typical_high…)",
+            "fr": "Code du niveau (typical_high…)",
+            "de": "Kürzel des Stands (typical_high…)",
+            "es": "Código del nivel (typical_high…)"
+          }
+        },
+        {
+          "key": "mark_name",
+          "type": "string",
+          "label": {
+            "en": "Level, in words",
+            "fr": "Niveau, en toutes lettres",
+            "de": "Stand, ausgeschrieben",
+            "es": "Nivel, en palabras"
+          }
+        },
+        {
+          "key": "mark_value",
+          "type": "number",
+          "label": {
+            "en": "Value of the level (m)",
+            "fr": "Valeur du niveau (m)",
+            "de": "Höhe des Stands (m)",
+            "es": "Valor del nivel (m)"
+          }
+        },
+        {
+          "key": "direction",
+          "type": "string",
+          "label": {
+            "en": "Direction (rising, falling)",
+            "fr": "Sens (rising, falling)",
+            "de": "Richtung (rising, falling)",
+            "es": "Sentido (rising, falling)"
+          }
         }
       ]
     }
   ],
   "widgets": [
     {
-      "key": "demo_status",
-      "label": { "en": "Demo status", "fr": "État de la démo" },
-      "description": {
-        "en": "Live temperature and plug power, plug connection and observed location.",
-        "fr": "Température et puissance en direct, connexion de la prise, position observée."
+      "key": "flood",
+      "label": {
+        "en": "England floods",
+        "fr": "Crues en Angleterre",
+        "de": "Hochwasser England",
+        "es": "Crecidas en Inglaterra"
       },
-      "icon": "activity",
-      "action_timeout_seconds": 15
+      "description": {
+        "en": "Flood warnings around the house and followed stations.",
+        "fr": "Alertes crues autour de la maison et stations suivies.",
+        "de": "Hochwasserwarnungen rund ums Haus und verfolgte Stationen.",
+        "es": "Avisos de inundación cerca de casa y estaciones seguidas."
+      },
+      "icon": "droplet",
+      "settings": [
+        {
+          "key": "station",
+          "type": "select",
+          "source": "devices",
+          "required": false,
+          "label": {
+            "en": "Device",
+            "fr": "Appareil",
+            "de": "Gerät",
+            "es": "Dispositivo"
+          },
+          "description": {
+            "en": "Leave empty for the overview; pick a station or the flood alerts for their details.",
+            "fr": "Laissez vide pour la vue d'ensemble ; choisissez une station ou les alertes crues pour leur détail.",
+            "de": "Leer lassen für die Übersicht; wähle eine Station oder die Hochwasserwarnungen für ihre Details.",
+            "es": "Déjelo vacío para la vista general; elija una estación o las alertas de crecidas para ver su detalle."
+          }
+        }
+      ]
     }
   ]
 }
