@@ -32,7 +32,7 @@ key.
 
 ## Requirements
 
-- Gladys Assistant **5.1.0** or later.
+- Gladys Assistant **5.3.0** or later.
 - Internet access from Gladys: the integration reads `environment.data.gov.uk`.
 - For the flood warnings and "Stations around my house": the location of your house in Gladys
   (Settings, Houses). The integration asks for it at installation (the "location" permission).

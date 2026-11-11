@@ -35,7 +35,7 @@ Ohne Konto, ohne Schlüssel.
 
 ## Voraussetzungen
 
-- Gladys Assistant **5.1.0** oder neuer.
+- Gladys Assistant **5.3.0** oder neuer.
 - Internetzugang für Gladys: Die Integration liest `environment.data.gov.uk`.
 - Für die Hochwasserwarnungen und „Stationen rund um mein Haus“: der Standort deines Hauses in
   Gladys (Einstellungen, Häuser). Die Integration fragt ihn bei der Installation an (Berechtigung
