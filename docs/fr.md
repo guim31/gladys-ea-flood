@@ -33,7 +33,7 @@ l'**Environment Agency**. Sans compte ni clé.
 
 ## Prérequis
 
-- Gladys Assistant **5.1.0** ou plus récent.
+- Gladys Assistant **5.3.0** ou plus récent.
 - Un accès à Internet depuis Gladys : l'intégration lit `environment.data.gov.uk`.
 - Pour les alertes crues et « Stations autour de ma maison » : la position de votre maison dans
   Gladys (Paramètres, Maisons). L'intégration la demande à l'installation (permission

@@ -39,7 +39,7 @@ The English counterpart of [gladys-vigicrues](https://github.com/guim31/gladys-v
 
 ## Requirements
 
-- Gladys Assistant **5.1.0** or later (widgets and scene triggers).
+- Gladys Assistant **5.3.0** or later (catalog countries; widgets and scene triggers need 5.1.0).
 - Internet access from Gladys to `environment.data.gov.uk`.
 - For the flood warnings and "around my house": the location of your house in Gladys. The
   integration declares `location: true`, shown on the install screen.

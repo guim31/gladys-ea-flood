@@ -33,7 +33,7 @@ en vigor alrededor de su casa**, desde la API de vigilancia de crecidas en tiemp
 
 ## Requisitos
 
-- Gladys Assistant **5.1.0** o posterior.
+- Gladys Assistant **5.3.0** o posterior.
 - Acceso a Internet desde Gladys: la integración lee `environment.data.gov.uk`.
 - Para los avisos de inundación y «Estaciones alrededor de mi casa»: la ubicación de su casa en
   Gladys (Ajustes, Casas). La integración la pide en la instalación (permiso «ubicación»). Solo
